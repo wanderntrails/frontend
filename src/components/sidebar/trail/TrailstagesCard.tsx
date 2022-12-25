@@ -4,24 +4,18 @@ import {
 	IconDirections,
 	IconWalk,
 } from "@tabler/icons"
-import React from "react"
 
 import Box from "../../../design-system/components/Box/Box"
+import Heading from "../../../design-system/components/Heading/Heading"
 import { TrailStage } from "../../../interfaces"
 
 const TrailstagesCard = ({ stages }: { stages?: TrailStage[] }) =>
 	stages ? (
 		<Box p="spacing-lg" bg="white">
 			<IconDirections />
-			<Box
-				as="h2"
-				color="neutral.500"
-				mb="spacing-xs"
-				fontSize="font-size-5"
-				fontWeight="font-weight-bold"
-			>
+			<Heading as="h2" color="neutral.500" mb="spacing-xs" size="md">
 				{stages.length - 1} Trail Stages
-			</Box>
+			</Heading>
 			<Box display="flex">
 				<Box
 					bg="green.700"

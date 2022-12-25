@@ -1,16 +1,17 @@
 import { IconTree } from "@tabler/icons"
-import React, { Fragment } from "react"
+import { Fragment } from "react"
 import ReactMarkdown from "react-markdown"
 
 import Box from "../../../design-system/components/Box/Box"
+import Heading from "../../../design-system/components/Heading/Heading"
 
 export default ({ description }: { description?: string }) =>
 	description ? (
 		<Box m="spacing-lg">
 			<IconTree />
-			<Box as="h2" color="neutral.500" mb="spacing-xs" fontSize="font-size-5">
+			<Heading as="h2" color="neutral.500" mb="spacing-xs" size="md">
 				Wild Camping Rules
-			</Box>
+			</Heading>
 			<Box as="p">
 				<ReactMarkdown components={{ p: Fragment }}>
 					{description}

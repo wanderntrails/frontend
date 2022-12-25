@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 import { BASE_URL, MapMarkers, useMap } from "../../MapContext"
 import Box from "../../design-system/components/Box/Box"
+import Heading from "../../design-system/components/Heading/Heading"
 import { Trail } from "../../interfaces"
 import { AccomMarker, StageMarker, resetMarkers } from "../MapMarker"
 import BackButton from "./trail/BackButton"
@@ -61,9 +62,10 @@ export default () => {
 			<Box bg="neutral.700" py="spacing-md" position="sticky" top={0}>
 				<BackButton />
 
-				<Box as="h1" textAlign="center" fontSize="font-size-6" color="white">
+				<Heading as="h1" size="xl" color="white" textAlign="center">
 					{trail?.name}
-				</Box>
+				</Heading>
+
 				<Box
 					as="p"
 					textAlign="center"

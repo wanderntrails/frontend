@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { BASE_URL, useMap } from "../../MapContext"
 import Box from "../../design-system/components/Box/Box"
+import Heading from "../../design-system/components/Heading/Heading"
 import { TrailOverview } from "../../interfaces"
 import { TrailMarker, resetMarkers } from "../MapMarker"
 import TrailCard from "../cards/TrailCard"
@@ -57,9 +58,9 @@ export default () => {
 				<Box height="60px" mr="spacing-md">
 					<WandernLogoFull />
 				</Box>
-				<Box as="h1" fontSize="font-size-5" color="white">
+				<Heading as="h1" size="md" color="white">
 					Plan your trail accommodation
-				</Box>
+				</Heading>
 			</Box>
 			{trails
 				? trails.map(trail => (

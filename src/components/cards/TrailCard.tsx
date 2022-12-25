@@ -1,9 +1,10 @@
 import { IconChevronRight } from "@tabler/icons"
-import React, { useState } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { MapContext } from "../../MapContext"
 import Box from "../../design-system/components/Box/Box"
+import Heading from "../../design-system/components/Heading/Heading"
 import { TrailOverview } from "../../interfaces"
 
 export default ({
@@ -59,14 +60,9 @@ export default ({
 				<Box as="p" color="neutral.500" fontSize="font-size-3">
 					{trail.countries.join(", ")}
 				</Box>
-				<Box
-					as="h2"
-					fontSize="font-size-4"
-					fontWeight="font-weight-bold"
-					my="spacing-xxs"
-				>
+				<Heading as="h2" size="md" my="spacing-xxs">
 					{trail.name}
-				</Box>
+				</Heading>
 				<Box as="p" fontWeight="font-weight-bold" color="neutral.500">
 					{Math.round(trail.distance / 1000)} km
 				</Box>
