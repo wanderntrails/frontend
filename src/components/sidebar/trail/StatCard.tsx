@@ -1,11 +1,7 @@
 import { TablerIcon } from "@tabler/icons"
-import React, { ReactNode } from "react"
+import React from "react"
 
-import {
-	Block,
-	BodyText,
-	SmallBodyText,
-} from "../../../design-system/components"
+import Box from "../../../design-system/components/Box/Box"
 
 export default ({
 	Icon,
@@ -16,15 +12,21 @@ export default ({
 	value: string
 	title: string
 }) => (
-	<Block flex={1}>
-		<Block color="primary.0" textAlign="center">
+	<Box flex={1}>
+		<Box color="primary.700" width="fit-content" mx="auto">
 			<Icon />
-		</Block>
-		<BodyText fontWeight="bold" textAlign="center">
+		</Box>
+		<Box
+			as="p"
+			mt="spacing-xs"
+			color="neutral.700"
+			fontWeight="font-weight-bold"
+			textAlign="center"
+		>
 			{value}
-		</BodyText>
-		<SmallBodyText color="neutral.4" textAlign="center">
+		</Box>
+		<Box as="p" color="neutral.500" textAlign="center" fontSize="font-size-2">
 			{title}
-		</SmallBodyText>
-	</Block>
+		</Box>
+	</Box>
 )

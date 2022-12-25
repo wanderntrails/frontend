@@ -1,26 +1,26 @@
-import { IconArrowLeft } from "@tabler/icons"
+import { IconHome } from "@tabler/icons"
 import React from "react"
 import { useNavigate } from "react-router-dom"
 
-import { Block, BodyText } from "../../../design-system/components"
+import Box from "../../../design-system/components/Box/Box"
 
-export default () => {
+const BackButton = () => {
 	const navigate = useNavigate()
 	return (
-		<Block
-			display="flex"
+		<Box
+			as="button"
+			bg="transparent"
+			color="white"
 			cursor="pointer"
-			py="xxs"
-			px="xs"
-			borderRadius="md"
-			bg="neutral.1"
+			borderRadius="border-radius-md"
 			width="fit-content"
-			alignItems="center"
-			m="sm"
+			ml="spacing-lg"
+			border="none"
 			onClick={() => navigate("/map")}
 		>
-			<IconArrowLeft size={32} />
-			<BodyText ml="xs">Trails</BodyText>
-		</Block>
+			<IconHome size={24} />
+		</Box>
 	)
 }
+
+export default BackButton

@@ -2,7 +2,7 @@ import { IconBus } from "@tabler/icons"
 import React, { Fragment } from "react"
 import ReactMarkdown from "react-markdown"
 
-import { Block, BodyText, Card, H2 } from "../../../design-system/components"
+import Box from "../../../design-system/components/Box/Box"
 
 export default ({
 	transport_to,
@@ -14,33 +14,48 @@ export default ({
 	transport_to &&
 	transport_from &&
 	(transport_to !== "\n" || transport_from !== "\n") ? (
-		<Card>
-			<Block>
-				<IconBus />
-			</Block>
+		<Box
+			m="spacing-lg"
+			sx={{
+				a: {
+					color: "primary.700",
+				},
+			}}
+		>
+			<IconBus />
 			{transport_to !== "\n" && (
 				<>
-					<H2 color="neutral.4" mb="xs">
+					<Box
+						as="h2"
+						color="neutral.500"
+						mb="spacing-xs"
+						fontSize="font-size-5"
+					>
 						Transport to start
-					</H2>
-					<BodyText mb="sm">
+					</Box>
+					<Box as="p">
 						<ReactMarkdown components={{ p: Fragment }}>
 							{transport_to}
 						</ReactMarkdown>
-					</BodyText>
+					</Box>
 				</>
 			)}
 			{transport_from !== "\n" && (
-				<>
-					<H2 color="neutral.4" mb="xs">
+				<Box mt="spacing-lg">
+					<Box
+						as="h2"
+						color="neutral.500"
+						mb="spacing-xs"
+						fontSize="font-size-5"
+					>
 						Transport from end
-					</H2>
-					<BodyText>
+					</Box>
+					<Box as="p">
 						<ReactMarkdown components={{ p: Fragment }}>
 							{transport_from}
 						</ReactMarkdown>
-					</BodyText>
-				</>
+					</Box>
+				</Box>
 			)}
-		</Card>
+		</Box>
 	) : null

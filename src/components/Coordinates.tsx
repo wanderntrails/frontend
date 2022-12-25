@@ -10,7 +10,7 @@ export default () => {
 		<table
 			className="coordinates"
 			style={{
-				color: theme.colors.neutral[isSatellite ? 0 : 5],
+				color: theme.colors.neutral[isSatellite ? 100 : 500],
 				fontWeight: isSatellite ? "bold" : "",
 			}}
 		>

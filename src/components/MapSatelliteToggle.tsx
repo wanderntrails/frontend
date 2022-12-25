@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { matchPath, useLocation } from "react-router-dom"
 
 import { useMap } from "../MapContext"
+import Box from "../design-system/components/Box/Box"
 
 export default () => {
 	const { pathname } = useLocation()
@@ -38,11 +39,29 @@ export default () => {
 	}
 
 	return (
-		<div
+		<Box
+			as="button"
 			className="map-satellite-toggle"
 			title={`Switch to ${isSatellite ? "Map" : "Satellite"}`}
+			borderRadius="border-radius-md"
+			width="64px"
+			height="64px"
+			ml="spacing-lg"
+			mb="spacing-lg"
+			cursor="pointer"
+			border="2px solid white"
+			backgroundSize="cover"
+			fontSize="font-size-2"
+			color="white"
+			p="spacing-xxs"
+			display="flex"
+			alignItems="flex-end"
+			justifyContent="center"
+			pointerEvents="auto"
+			//@ts-ignore
+			boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
 			onClick={toggleMapSatellite}
-			style={{
+			sx={{
 				background: `
           linear-gradient(
             180deg,
@@ -54,6 +73,6 @@ export default () => {
 			}}
 		>
 			{isSatellite ? "Map" : "Satellite"}
-		</div>
+		</Box>
 	)
 }

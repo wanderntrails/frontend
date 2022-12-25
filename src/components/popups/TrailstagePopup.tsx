@@ -2,7 +2,7 @@ import { IconArrowDownRight, IconArrowUpRight, IconWalk } from "@tabler/icons"
 import React from "react"
 import { ThemeProvider } from "styled-components"
 
-import { Block, BodyText, SmallBodyText } from "../../design-system/components"
+import Box from "../../design-system/components/Box/Box"
 import theme from "../../design-system/theme"
 import { TrailStage } from "../../interfaces"
 
@@ -15,48 +15,53 @@ export default ({
 }) => {
 	return (
 		<ThemeProvider theme={theme}>
-			<SmallBodyText className="popup-trailstage-number">
+			<Box as="p" fontSize="font-size-2" color="neutral.400">
 				{trailstage.order_number === 0
 					? "Start"
 					: isFinishStage
 					? "Finish"
 					: `Stage ${trailstage.order_number}`}
-			</SmallBodyText>
+			</Box>
 
 			{trailstage.order_number > 0 && (
-				<Block display="flex" my="sm">
-					<Block display="flex" color="neutral.4">
+				<Box display="flex" my="spacing-sm">
+					<Box display="flex" color="neutral.400">
 						<IconWalk />
-						<BodyText color="neutral.0">
+						<Box as="p" color="white" fontSize="font-size-3">
 							{trailstage.distance_from_last / 1000} km
-						</BodyText>
-					</Block>
-					<Block display="flex" color="neutral.4" mx="xxs">
+						</Box>
+					</Box>
+					<Box display="flex" color="neutral.400" mx="spacing-xxs">
 						<IconArrowUpRight />
-						<BodyText color="neutral.0">
+						<Box as="p" color="white" fontSize="font-size-3">
 							{trailstage.total_ascent_from_last} m
-						</BodyText>
-					</Block>
-					<Block display="flex" color="neutral.4">
+						</Box>
+					</Box>
+					<Box display="flex" color="neutral.400">
 						<IconArrowDownRight />
-						<BodyText color="neutral.0">
+						<Box as="p" color="white" fontSize="font-size-3">
 							{trailstage.total_descent_from_last} m
-						</BodyText>
-					</Block>
-				</Block>
+						</Box>
+					</Box>
+				</Box>
 			)}
 
-			<BodyText fontWeight="bold" color="neutral.0">
+			<Box
+				as="p"
+				fontWeight="font-weight-bold"
+				color="white"
+				fontSize="font-size-3"
+			>
 				{trailstage.name}
-			</BodyText>
+			</Box>
 
 			<style type="text/css">
 				{`
         .mapboxgl-popup-content {
-          background: #334155;
-          border-radius: 8px;
+          background: ${theme.colors.neutral[700]};
+          border-radius: ${theme.radii["border-radius-md"]};
           padding: 12px 16px;
-          filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.1)) drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.05));
+					box-shadow: ${theme.shadows["shadow-lg"]}
         }
         .mapboxgl-popup-content > p {
           margin: 0;

@@ -2,41 +2,48 @@ import { IconMinus, IconPlus } from "@tabler/icons"
 import React from "react"
 
 import { useMap } from "../MapContext"
-import { Block } from "../design-system/components"
+import Box from "../design-system/components/Box/Box"
 
 export default () => {
 	const { map } = useMap()
 
 	return (
-		<Block
-			borderRadius="md"
+		<Box
+			// @ts-ignore
+			boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
 			overflow="hidden"
 			zIndex={2}
 			position="absolute"
 			bottom="80px"
-			right="8px"
-			boxShadow="md"
+			right="16px"
+			display="flex"
+			flexDirection="column"
+			borderRadius="border-radius-md"
 		>
-			<Block
-				p="xs"
-				backgroundColor="neutral.0"
+			<Box
+				as="button"
+				border="none"
 				cursor="pointer"
-				fontSize="lg"
+				p="spacing-xxs"
+				backgroundColor="white"
 				title="Zoom in"
 				onClick={() => map.current && map.current.zoomIn()}
 			>
-				<IconPlus />
-			</Block>
-			<Block
-				p="xs"
-				backgroundColor="neutral.0"
+				<IconPlus fontSize="font-size-3" />
+			</Box>
+			<Box
+				as="button"
+				border="none"
+				borderTop="1px solid"
+				borderTopColor="neutral.200"
+				p="spacing-xxs"
+				backgroundColor="white"
 				cursor="pointer"
-				fontSize="lg"
 				title="Zoom out"
 				onClick={() => map.current && map.current.zoomOut()}
 			>
-				<IconMinus />
-			</Block>
-		</Block>
+				<IconMinus fontSize="font-size-3" />
+			</Box>
+		</Box>
 	)
 }

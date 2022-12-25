@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 import { BASE_URL, MapMarkers, useMap } from "../../MapContext"
-import { BodyText, H1, Image } from "../../design-system/components"
+import Box from "../../design-system/components/Box/Box"
 import { Trail } from "../../interfaces"
 import { AccomMarker, StageMarker, resetMarkers } from "../MapMarker"
 import BackButton from "./trail/BackButton"
@@ -58,14 +58,31 @@ export default () => {
 
 	return (
 		<>
-			<BackButton />
+			<Box bg="neutral.700" py="spacing-md" position="sticky" top={0}>
+				<BackButton />
 
-			<H1 textAlign="center">{trail?.name}</H1>
-			<BodyText textAlign="center" color="neutral.4" mb="sm">
-				{trail?.countries?.join(", ")}
-			</BodyText>
+				<Box as="h1" textAlign="center" fontSize="font-size-6" color="white">
+					{trail?.name}
+				</Box>
+				<Box
+					as="p"
+					textAlign="center"
+					color="neutral.300"
+					fontSize="font-size-4"
+				>
+					{trail?.countries?.join(", ")}
+				</Box>
+			</Box>
 
-			{trail && <Image height="240px" src={trail.image} />}
+			{trail && (
+				<Box
+					as="img"
+					height="240px"
+					objectFit="cover"
+					width={1}
+					src={trail.image}
+				/>
+			)}
 
 			<StatsCard trail={trail} />
 			<CampingRulesCard description={trail?.wild_camping_rules} />

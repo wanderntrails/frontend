@@ -1,70 +1,117 @@
 import {
 	IconArrowDownRight,
 	IconArrowUpRight,
-	IconFlag,
+	IconDirections,
 	IconWalk,
 } from "@tabler/icons"
-import React, { Fragment } from "react"
+import React from "react"
 
-import {
-	Block,
-	BodyText,
-	Card,
-	H2,
-	MarkerTrailStage,
-} from "../../../design-system/components"
+import Box from "../../../design-system/components/Box/Box"
 import { TrailStage } from "../../../interfaces"
 
-export default ({ stages }: { stages?: TrailStage[] }) =>
+const TrailstagesCard = ({ stages }: { stages?: TrailStage[] }) =>
 	stages ? (
-		<Card>
-			<IconFlag />
-			<H2 color="neutral.4" mb="xs">
+		<Box p="spacing-lg" bg="white">
+			<IconDirections />
+			<Box
+				as="h2"
+				color="neutral.500"
+				mb="spacing-xs"
+				fontSize="font-size-5"
+				fontWeight="font-weight-bold"
+			>
 				{stages.length - 1} Trail Stages
-			</H2>
-
-			<Block display="flex">
-				<MarkerTrailStage bg="positive.0" />
-				<BodyText fontWeight="bold" ml="sm">
+			</Box>
+			<Box display="flex">
+				<Box
+					bg="green.700"
+					border="2px solid white"
+					boxShadow="shadow-sm"
+					height="24px"
+					width="24px"
+					borderRadius="border-radius-circle"
+					color="white"
+					display="flex"
+					alignItems="center"
+					justifyContent="center"
+					fontSize="font-size-2"
+				/>
+				<Box as="p" fontWeight="font-weight-bold" ml="spacing-sm">
 					{stages[0].name}
-				</BodyText>
-			</Block>
+				</Box>
+			</Box>
 			{stages.slice(1).map((stage, index) => (
-				<Fragment key={index}>
-					<Block className="trailstage-stats">
-						<Block className="trailstage-stat">
+				<Box key={index}>
+					<Box
+						display="flex"
+						height="80px"
+						borderLeft="2px dashed"
+						borderColor="neutral.400"
+						//@ts-ignore
+						mx="10px"
+						pl="spacing-lg"
+						alignItems="center"
+					>
+						<Box display="flex" color="neutral.500" alignItems="center">
 							<IconWalk />
-							<BodyText color="neutral.4">
+							<Box as="p" color="neutral.500">
 								{Math.round(stage.distance_from_last / 1000)} km
-							</BodyText>
-						</Block>
-						<Block className="trailstage-stat">
+							</Box>
+						</Box>
+						<Box display="flex" color="neutral.500" alignItems="center">
 							<IconArrowUpRight />
-							<BodyText color="neutral.4">
+							<Box as="p" color="neutral.500">
 								{stage.total_ascent_from_last} m
-							</BodyText>
-						</Block>
-						<Block className="trailstage-stat">
+							</Box>
+						</Box>
+						<Box display="flex" color="neutral.500" alignItems="center">
 							<IconArrowDownRight />
-							<BodyText color="neutral.4">
+							<Box as="p" color="neutral.500">
 								{stage.total_descent_from_last} m
-							</BodyText>
-						</Block>
-					</Block>
+							</Box>
+						</Box>
+					</Box>
 
-					<Block display="flex">
+					<Box display="flex">
 						{index + 2 === stages.length ? (
-							<MarkerTrailStage backgroundImage="url(/svg/map-markers/trailstage-end.svg)" />
+							<Box
+								backgroundImage="url(/svg/map-markers/trailstage-end.svg)"
+								border="2px solid white"
+								boxShadow="shadow-sm"
+								height="24px"
+								width="24px"
+								borderRadius="border-radius-circle"
+								color="white"
+								display="flex"
+								alignItems="center"
+								justifyContent="center"
+								fontSize="font-size-2"
+							/>
 						) : (
-							<MarkerTrailStage bg="neutral.5">
+							<Box
+								bg="neutral.700"
+								border="2px solid white"
+								boxShadow="shadow-sm"
+								height="24px"
+								width="24px"
+								borderRadius="border-radius-circle"
+								color="white"
+								display="flex"
+								alignItems="center"
+								justifyContent="center"
+								fontSize="font-size-2"
+								fontWeight="font-weight-bold"
+							>
 								{stage.order_number}
-							</MarkerTrailStage>
+							</Box>
 						)}
-						<BodyText fontWeight="bold" ml="sm">
+						<Box as="p" fontWeight="font-weight-bold" ml="spacing-sm">
 							{stage.name}
-						</BodyText>
-					</Block>
-				</Fragment>
+						</Box>
+					</Box>
+				</Box>
 			))}
-		</Card>
+		</Box>
 	) : null
+
+export default TrailstagesCard

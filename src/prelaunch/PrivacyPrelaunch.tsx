@@ -1,5 +1,6 @@
 import Footer from "./Footer"
-import "./stylesheets/style.css"
+
+// import "./stylesheets/style.css"
 
 export default () => (
 	<>

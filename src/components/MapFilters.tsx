@@ -1,6 +1,7 @@
 import React from "react"
 
 import { useMap } from "../MapContext"
+import Box from "../design-system/components/Box/Box"
 import { FilterProps } from "../interfaces"
 import CampsiteFilter from "./filters/CampsiteFilter"
 import HutFilter from "./filters/HutFilter"
@@ -19,13 +20,20 @@ export default () => {
 			})
 
 	return mapMarkers ? (
-		<div className="map-filters">
+		<Box
+			position="absolute"
+			top="16px"
+			right="16px"
+			zIndex={3}
+			display="flex"
+			gap="spacing-xs"
+		>
 			<CampsiteFilter {...{ toggleDisplay }} />
 			<HutFilter {...{ toggleDisplay }} />
 			<StageFilter
 				numStages={mapMarkers.stages?.length}
 				{...{ toggleDisplay }}
 			/>
-		</div>
+		</Box>
 	) : null
 }

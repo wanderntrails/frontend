@@ -3,12 +3,7 @@ import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { MapContext } from "../../MapContext"
-import {
-	Block,
-	BodyText,
-	Image,
-	SmallBodyText,
-} from "../../design-system/components"
+import Box from "../../design-system/components/Box/Box"
 import { TrailOverview } from "../../interfaces"
 
 export default ({
@@ -36,38 +31,49 @@ export default ({
 	}
 
 	return (
-		<Block
+		<Box
+			as="button"
+			border="none"
 			display="flex"
-			height="100px"
-			borderTop="1px solid"
-			backgroundColor={isHovered ? "neutral.2" : "neutral.0"}
-			borderColor="neutral.2"
+			width={1}
+			textAlign="left"
+			borderTopStyle="solid"
+			borderTopWidth="1px"
+			backgroundColor={isHovered ? "neutral.200" : "neutral.100"}
+			borderColor="neutral.300"
 			cursor="pointer"
-			p="xs"
+			p="spacing-xs"
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			onClick={() => navigate(`/map/${trail.url}`)}
 		>
-			<Image
+			<Box
+				as="img"
 				width="140px"
-				borderRadius="md"
+				height="100px"
+				borderRadius="border-radius-md"
 				src={trail.image}
 				backgroundSize="cover"
 			/>
-			<Block flex={1} my="auto" mx="xs">
-				<SmallBodyText color="neutral.4">
+			<Box flex={1} my="auto" mx="spacing-xs">
+				<Box as="p" color="neutral.500" fontSize="font-size-3">
 					{trail.countries.join(", ")}
-				</SmallBodyText>
-				<BodyText fontWeight="bold" my="xxs">
+				</Box>
+				<Box
+					as="h2"
+					fontSize="font-size-4"
+					fontWeight="font-weight-bold"
+					my="spacing-xxs"
+				>
 					{trail.name}
-				</BodyText>
-				<SmallBodyText fontWeight="bold" color="neutral.4">
+				</Box>
+				<Box as="p" fontWeight="font-weight-bold" color="neutral.500">
 					{Math.round(trail.distance / 1000)} km
-				</SmallBodyText>
-			</Block>
-			<Block color="neutral.3" my="auto">
+				</Box>
+			</Box>
+			<Box color="neutral.400" my="auto">
 				<IconChevronRight />
-			</Block>
-		</Block>
+			</Box>
+		</Box>
 	)
 }

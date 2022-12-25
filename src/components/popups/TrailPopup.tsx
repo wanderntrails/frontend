@@ -1,19 +1,21 @@
 import React from "react"
+import { ThemeProvider } from "styled-components"
 
+import theme from "../../design-system/theme"
 import { TrailOverview } from "../../interfaces"
 
 export default ({ trail }: { trail: TrailOverview }) => {
 	return (
-		<>
+		<ThemeProvider theme={theme}>
 			{trail.name}
 			<style type="text/css">{`
         .mapboxgl-popup-content {
           border-radius: 16px;
-          background: #334155;
+          background: ${theme.colors.neutral[700]};
           color: white;
-          font-size: 14px;
+          font-size: ${theme.fontSizes["font-size-3"]};
           padding: 8px 12px;
-          filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.1)) drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.05));
+          box-shadow: ${theme.shadows["shadow-lg"]}
         }
         .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
         .mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
@@ -32,6 +34,6 @@ export default ({ trail }: { trail: TrailOverview }) => {
           display: none !important;
         }
       `}</style>
-		</>
+		</ThemeProvider>
 	)
 }

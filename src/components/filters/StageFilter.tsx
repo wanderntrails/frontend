@@ -1,22 +1,48 @@
 import React, { useState } from "react"
 
+import Box from "../../design-system/components/Box/Box"
 import { FilterProps } from "../../interfaces"
 
-export default ({ numStages, toggleDisplay }: FilterProps) => {
+const StageFilter = ({ numStages, toggleDisplay }: FilterProps) => {
 	const [isHidden, setIsHidden] = useState(false)
 
 	return (
-		<div
+		<Box
 			onClick={toggleDisplay("stages", setIsHidden)}
-			title="Filter trail stages"
-			className={"map-filter" + (isHidden ? " disabled" : "")}
+			as="button"
+			border="none"
+			display="flex"
+			bg={isHidden ? "neutral.100" : "white"}
+			color={isHidden ? "neutral.400" : "neutral.700"}
+			borderRadius="border-radius-pill"
+			py="spacing-xxs"
+			px="spacing-md"
+			//@ts-ignore
+			boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
+			cursor="pointer"
+			width="fit-content"
+			gap="spacing-xs"
+			alignItems="center"
 		>
-			<div
-				className="map-filter-trailstage"
-				style={isHidden ? { backgroundColor: "rgb(203, 213, 225)" } : {}}
+			<Box
+				borderRadius="border-radius-circle"
+				height="24px"
+				width="24px"
+				fontSize="font-size-1"
+				bg="neutral.700"
+				color="white"
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
+				fontWeight="font-weight-bold"
 			>
 				{numStages}
-			</div>
-		</div>
+			</Box>
+			<Box as="p" fontWeight="font-weight-bold">
+				Stages
+			</Box>
+		</Box>
 	)
 }
+
+export default StageFilter

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { BASE_URL, useMap } from "../../MapContext"
-import { Block, H1 } from "../../design-system/components"
+import Box from "../../design-system/components/Box/Box"
 import { TrailOverview } from "../../interfaces"
 import { TrailMarker, resetMarkers } from "../MapMarker"
 import TrailCard from "../cards/TrailCard"
@@ -51,20 +51,22 @@ export default () => {
 	}, [])
 
 	return (
-		<Block>
-			<Block mt="xs" textAlign="center">
-				<WandernLogoFull />
-			</Block>
-			<H1 textAlign="center" mb="sm" noMargin>
-				Plan your trail accommodation
-			</H1>
+		<>
+			<Box display="flex" alignItems="center" p="spacing-sm" bg="neutral.700">
+				<Box height="60px" mr="spacing-md">
+					<WandernLogoFull />
+				</Box>
+				<Box as="h1" fontSize="font-size-5" color="white">
+					Plan your trail accommodation
+				</Box>
+			</Box>
 			{trails
 				? trails.map(trail => (
 						<TrailCard key={trail.url} trail={trail} map={map} />
 				  ))
 				: Array.from({ length: 10 }, (_, i) => (
-						<Block key={i} height="100px" bg="neutral.2" m="xs"></Block>
+						<Box key={i} height="100px" bg="neutral.200" m="spacing-xs" />
 				  ))}
-		</Block>
+		</>
 	)
 }

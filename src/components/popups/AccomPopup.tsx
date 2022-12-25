@@ -1,31 +1,44 @@
 import React from "react"
 import { ThemeProvider } from "styled-components"
 
-import { BodyText, Image } from "../../design-system/components"
+import Box from "../../design-system/components/Box/Box"
 import theme from "../../design-system/theme"
 import { Accom } from "../../interfaces"
 
 export default ({ accom }: { accom: Accom }) => {
 	return (
 		<ThemeProvider theme={theme}>
-			<a href={accom.website} target="_blank">
-				<Image height="120px" objectFit="cover" src={accom.image} />
-				<BodyText fontWeight="bold" my="xs" mx="sm">
+			<Box as="a" href={accom.website} target="_blank" textDecoration="none">
+				<Box
+					as="img"
+					height="120px"
+					width={1}
+					objectFit="cover"
+					src={accom.image}
+				/>
+				<Box
+					as="p"
+					fontSize="font-size-3"
+					color="neutral.700"
+					fontWeight="font-weight-bold"
+					my="spacing-xs"
+					mx="spacing-sm"
+				>
 					{accom.name}
-				</BodyText>
+				</Box>
 
 				<style type="text/css">
 					{`
             .mapboxgl-popup-content {
-              border-radius: 16px;
+							border-radius: 16px;
               width: 240px;
               padding: 0;
               overflow: hidden;
-              filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.1)) drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.05));
+              box-shadow: ${theme.shadows["shadow-xl"]};
             }
           `}
 				</style>
-			</a>
+			</Box>
 		</ThemeProvider>
 	)
 }

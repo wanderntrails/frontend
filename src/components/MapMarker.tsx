@@ -27,7 +27,7 @@ const TrailMarker = (
 	// let markerIcon = (
 	//   <img
 	//     className="marker marker-trail"
-	//     src="/static/map/svg/map-markers/trail.svg"
+	//     src="/svg/map-markers/trail.svg"
 	//   />
 	// )
 	let markerIcon = document.createElement("img")
