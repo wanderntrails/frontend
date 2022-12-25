@@ -32,6 +32,7 @@ import {
 	FontFamilyProps,
 	GapProps,
 	ObjectFitProps,
+	PointerEventsProps,
 	TextDecorationProps,
 } from "./systemProps"
 
@@ -56,6 +57,7 @@ type ThemedStyleProps = SpaceProps<ThemeSpecification, Space | "auto" | 0> &
 	GapProps &
 	TextDecorationProps &
 	CursorProps &
-	ObjectFitProps
+	ObjectFitProps &
+	PointerEventsProps
 
 export default ThemedStyleProps

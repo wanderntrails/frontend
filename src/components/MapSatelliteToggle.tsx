@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import { matchPath, useLocation } from "react-router-dom"
 
 import { useMap } from "../MapContext"
@@ -42,14 +42,12 @@ export default () => {
 	return (
 		<Box
 			as="button"
-			className="map-satellite-toggle"
 			title={`Switch to ${isSatellite ? "Map" : "Satellite"}`}
 			borderRadius="border-radius-md"
 			width="64px"
 			height="64px"
 			ml="spacing-lg"
 			mb="spacing-lg"
-			cursor="pointer"
 			border="2px solid white"
 			backgroundSize="cover"
 			fontSize="font-size-2"
@@ -58,18 +56,19 @@ export default () => {
 			display="flex"
 			alignItems="flex-end"
 			justifyContent="center"
+			cursor="pointer"
 			pointerEvents="auto"
 			//@ts-ignore
 			boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
 			onClick={toggleMapSatellite}
 			sx={{
-				background: `
+				backgroundImage: `
           linear-gradient(
             180deg,
             rgba(0, 0, 0, 0) 50%,
             rgba(0, 0, 0, 0.7) 100%
           ),
-          url('/images/${isSatellite ? "map" : "satellite"}.png')
+          url("/images/${isSatellite ? "map" : "satellite"}.png");
         `,
 			}}
 		>

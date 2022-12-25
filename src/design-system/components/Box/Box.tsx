@@ -37,6 +37,7 @@ const Box = styled.div<ThemedStyleProps & SxProps>(
 		cursor: true,
 		textDecoration: true,
 		objectFit: true,
+		pointerEvents: true,
 		gap: {
 			property: "gap",
 			scale: "space",

@@ -35,3 +35,7 @@ export type ObjectFitProps = {
 export type CursorProps = {
 	cursor?: ResponsiveValue<CSS.Property.Cursor> | undefined
 }
+
+export type PointerEventsProps = {
+	pointerEvents?: ResponsiveValue<CSS.Property.PointerEvents> | undefined
+}
