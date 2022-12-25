@@ -1,0 +1,79 @@
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+
+import { BASE_URL, MapMarkers, useMap } from "../../MapContext"
+import { BodyText, H1, Image } from "../../design-system/components"
+import { Trail } from "../../interfaces"
+import { AccomMarker, StageMarker, resetMarkers } from "../MapMarker"
+import BackButton from "./trail/BackButton"
+import CampingRulesCard from "./trail/CampingRulesCard"
+import StatsCard from "./trail/StatsCard"
+import TrailstagesCard from "./trail/TrailstagesCard"
+import TransportCard from "./trail/TransportCard"
+
+export default () => {
+	const params = useParams()
+	const trailURL = params.trail!.toLowerCase()
+
+	const { map, setMapMarkers } = useMap()
+	const [trail, setTrail] = useState<Trail | null>(null)
+
+	// run when first loaded
+	useEffect(() => {
+		fetch(`${BASE_URL}/trail/${trailURL}.json`)
+			.then(response => response.json())
+			.then((json: Trail) => {
+				setTrail(json)
+
+				resetMarkers(setMapMarkers)
+				let trailMarkers: MapMarkers = { campsites: [], huts: [], stages: [] }
+				json.accoms.forEach(accom =>
+					trailMarkers![accom.type + "s"].push(AccomMarker(accom))
+				)
+				trailMarkers.stages = json.stages.map(stage =>
+					StageMarker(stage, json.stages.length)
+				)
+				if (!map.current) return // further testing required
+				Object.values(trailMarkers).forEach(markers =>
+					markers.forEach(marker => marker.addTo(map.current!))
+				)
+				setMapMarkers(trailMarkers)
+
+				map.current.setPitch(35)
+				map.current.fitBounds(json.bbox, {
+					padding: { top: 32, bottom: 64, left: 400 + 64, right: 100 },
+				})
+				map.current.setLayoutProperty(trailURL, "visibility", "visible")
+
+				document.title = `${json.name} | Wandern - Trail accommodation`
+				const titles: (HTMLElement | null)[] = [
+					document.querySelector("meta[property='og:title']"),
+					document.querySelector("meta[name='twitter:text:title']"),
+				]
+				titles.forEach(
+					el => el instanceof HTMLMetaElement && (el.content = document.title)
+				)
+			})
+	}, [])
+
+	return (
+		<>
+			<BackButton />
+
+			<H1 textAlign="center">{trail?.name}</H1>
+			<BodyText textAlign="center" color="neutral.4" mb="sm">
+				{trail?.countries?.join(", ")}
+			</BodyText>
+
+			{trail && <Image height="240px" src={trail.image} />}
+
+			<StatsCard trail={trail} />
+			<CampingRulesCard description={trail?.wild_camping_rules} />
+			<TransportCard
+				transport_to={trail?.transport_to}
+				transport_from={trail?.transport_from}
+			/>
+			<TrailstagesCard stages={trail?.stages} />
+		</>
+	)
+}
