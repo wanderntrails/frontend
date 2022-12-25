@@ -13,7 +13,7 @@ import TransportCard from "./trail/TransportCard"
 
 export default () => {
 	const params = useParams()
-	const trailURL = params.trail!.toLowerCase()
+	const trailURL = (params.trail ?? "").toLowerCase()
 
 	const { map, setMapMarkers } = useMap()
 	const [trail, setTrail] = useState<Trail | null>(null)
@@ -26,16 +26,16 @@ export default () => {
 				setTrail(json)
 
 				resetMarkers(setMapMarkers)
-				let trailMarkers: MapMarkers = { campsites: [], huts: [], stages: [] }
+				const trailMarkers: MapMarkers = { campsites: [], huts: [], stages: [] }
 				json.accoms.forEach(accom =>
-					trailMarkers![accom.type + "s"].push(AccomMarker(accom))
+					trailMarkers[accom.type + "s"].push(AccomMarker(accom))
 				)
 				trailMarkers.stages = json.stages.map(stage =>
 					StageMarker(stage, json.stages.length)
 				)
 				if (!map.current) return // further testing required
 				Object.values(trailMarkers).forEach(markers =>
-					markers.forEach(marker => marker.addTo(map.current!))
+					markers.forEach(marker => map.current && marker.addTo(map.current))
 				)
 				setMapMarkers(trailMarkers)
 

@@ -22,8 +22,9 @@ export default () => {
 				//@ts-ignore
 				map.current.off("styledata")
 				json.forEach((trail: TrailOverview, index: number) => {
+					if (!map.current) return // ?
 					json[index].marker = TrailMarker(trail, map, navigate).addTo(
-						map.current! // ?
+						map.current
 					)
 				})
 				setTrails(json)

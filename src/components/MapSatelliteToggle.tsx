@@ -14,6 +14,7 @@ export default () => {
 		Satellite: "mapbox://styles/vankhan/ckm9ku43sfb4o17lbsltrn6kh",
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	useEffect((): any => {
 		if (!map.current) return
 		const onChange = () => {
@@ -29,7 +30,7 @@ export default () => {
 			}
 		}
 		map.current.once("styledata", onChange)
-		return () => map.current!.off("styledata", onChange)
+		return () => map.current?.off("styledata", onChange)
 	})
 
 	const toggleMapSatellite = () => {

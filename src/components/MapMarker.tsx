@@ -30,11 +30,11 @@ const TrailMarker = (
 	//     src="/svg/map-markers/trail.svg"
 	//   />
 	// )
-	let markerIcon = document.createElement("img")
+	const markerIcon = document.createElement("img")
 	markerIcon.src = "/svg/map-markers/trail.svg"
 	markerIcon.className = "marker marker-trail"
 
-	let marker = new Marker(markerIcon)
+	const marker = new Marker(markerIcon)
 		.setLngLat([trail.longitude, trail.latitude])
 		.setPopup(
 			new Popup({
@@ -82,7 +82,7 @@ const StageMarker = (stage: TrailStage, numStages: number): Marker => {
 			markerIcon.className += " start"
 		}
 	}
-	let marker = new Marker(markerIcon)
+	const marker = new Marker(markerIcon)
 		.setLngLat([parseFloat(stage.longitude), parseFloat(stage.latitude)])
 		.setPopup(
 			new Popup({
@@ -103,11 +103,11 @@ const StageMarker = (stage: TrailStage, numStages: number): Marker => {
 }
 
 const AccomMarker = (accom: Accom): Marker => {
-	let markerIcon = document.createElement("img")
+	const markerIcon = document.createElement("img")
 	markerIcon.className = "marker marker-accom"
 	markerIcon.src = `/svg/map-markers/${accom.type}.svg`
 
-	let marker = new Marker(markerIcon)
+	const marker = new Marker(markerIcon)
 		.setLngLat([parseFloat(accom.longitude), parseFloat(accom.latitude)])
 		.setPopup(
 			new Popup({
