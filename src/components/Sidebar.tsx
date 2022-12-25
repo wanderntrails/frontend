@@ -1,9 +1,7 @@
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons"
-import React from "react"
 import { Route, Routes } from "react-router-dom"
 
 import { Block } from "../design-system/components"
-import { SetState } from "../interfaces"
 import HomeSidebar from "./sidebar/HomeSidebar"
 import TrailSidebar from "./sidebar/TrailSidebar"
 
@@ -25,8 +23,8 @@ export default ({
 			</Block>
 			<Block height="100vh" overflow="scroll">
 				<Routes>
-					<Route path="/map" element={<HomeSidebar />} />
-					<Route path="/map/:trail" element={<TrailSidebar />} />
+					<Route index element={<HomeSidebar />} />
+					<Route path=":trail" element={<TrailSidebar />} />
 				</Routes>
 			</Block>
 		</Block>

@@ -1,12 +1,13 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { ThemeProvider } from "styled-components"
 
 import App from "./App"
 import { ContextProvider } from "./MapContext"
-import "./application.css"
 import theme from "./design-system/theme"
+import HomePrelaunch from "./prelaunch/HomePrelaunch"
+import PrivacyPrelaunch from "./prelaunch/PrivacyPrelaunch"
 
 const root = createRoot(document.querySelector("#root") as HTMLElement)
 root.render(
@@ -14,7 +15,11 @@ root.render(
 		<ThemeProvider theme={theme}>
 			<ContextProvider>
 				<BrowserRouter>
-					<App />
+					<Routes>
+						<Route index element={<HomePrelaunch />} />
+						<Route path="privacy" element={<PrivacyPrelaunch />} />
+						<Route path="map/*" element={<App />} />
+					</Routes>
 				</BrowserRouter>
 			</ContextProvider>
 		</ThemeProvider>

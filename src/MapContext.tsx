@@ -72,7 +72,7 @@ const ContextProvider = ({ children }: { children: ReactNode }) => {
 
 	// get trails json
 	useEffect(() => {
-		map.current!.on(
+		map.current?.on(
 			"click",
 			({ lngLat: { lng, lat } }: { lngLat: { lng: number; lat: number } }) =>
 				setCoordinates({ lng: lng.toFixed(5), lat: lat.toFixed(5) })

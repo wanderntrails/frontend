@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useMatch } from "react-router-dom"
 
 import { useMap } from "./MapContext"
+import "./application.css"
 import Coordinates from "./components/Coordinates"
 import MapFilters from "./components/MapFilters"
 import MapSatelliteToggle from "./components/MapSatelliteToggle"

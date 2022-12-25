@@ -1,0 +1,19 @@
+.request-access {
+  padding: 8px 12px;
+  border: 2px solid var(--blueGray700);
+  color: var(--blueGray700);
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 24px;
+  transition: all .1s ease-in;
+}
+
+.request-access:hover {
+  background: var(--wandernOrange);
+  border: 2px solid var(--wandernOrange);
+  color: white;
+}
