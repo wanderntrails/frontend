@@ -60,7 +60,7 @@ export default ({
 				<Box as="p" color="neutral.500" fontSize="font-size-3">
 					{trail.countries.join(", ")}
 				</Box>
-				<Heading as="h2" size="md" my="spacing-xxs">
+				<Heading as="h2" size="sm" my="spacing-xxs">
 					{trail.name}
 				</Heading>
 				<Box as="p" fontWeight="font-weight-bold" color="neutral.500">

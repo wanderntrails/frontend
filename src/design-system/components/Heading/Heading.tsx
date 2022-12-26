@@ -15,7 +15,7 @@ import { sizeToElement, sizeToFontSize } from "./styles"
 type HeadingProps = {
 	children: ReactNode
 	as?: "h1" | "h2" | "h3" | "h4"
-	size?: "xxl" | "xl" | "lg" | "md"
+	size?: "xxl" | "xl" | "lg" | "md" | "sm"
 	color?: Color
 	textAlign?: ResponsiveValue<CSS.Property.TextAlign>
 } & Omit<HTMLAttributes<HTMLHeadingElement>, keyof CSSProperties | "style"> &

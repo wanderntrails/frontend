@@ -19,6 +19,10 @@ const sizeMap = {
 		element: "h4",
 		fontSize: "font-size-4",
 	},
+	sm: {
+		element: "h5",
+		fontSize: "font-size-3",
+	},
 } as const
 
 // Generate heading style and default HTML element (from h1 to h4) based on provided size

@@ -54,11 +54,17 @@ export default () => {
 
 	return (
 		<>
-			<Box display="flex" alignItems="center" p="spacing-sm" bg="neutral.700">
-				<Box height="60px" mr="spacing-md">
+			<Box p="spacing-sm" bg="neutral.700" position="sticky" top={0}>
+				<Box height="60px" mx="auto" width="fit-content">
 					<WandernLogoFull />
 				</Box>
-				<Heading as="h1" size="md" color="white">
+				<Heading
+					as="h1"
+					size="lg"
+					color="white"
+					textAlign="center"
+					my="spacing-xs"
+				>
 					Plan your trail accommodation
 				</Heading>
 			</Box>
