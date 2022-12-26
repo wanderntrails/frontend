@@ -1,62 +1,63 @@
 .wrapper-step {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 100vh;
 }
 
 .wrapper-step img {
-  max-width: 100%;
-  margin: 16px auto;
+	max-width: 100%;
+	margin: 16px auto;
 }
 
 .wrapper-step .text {
-  margin: auto 0;
-  display: flex;
-  align-items: center;
+	margin: auto 0;
+	display: flex;
+	align-items: center;
 }
 
 .wrapper-step h2 {
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+	margin-bottom: 16px;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
+	font-size: 48px;
 }
 
 .wrapper-step .text div {
-  max-width: 320px;
+	max-width: 320px;
 }
 
 .wrapper-step .number {
-  user-select: none;
-  font-weight: 700;
-  font-size: 360px;
-  color: var(--blueGray200);
+	user-select: none;
+	font-weight: 700;
+	font-size: 360px;
+	color: var(--blueGray200);
 }
 
 .step-1-image {
-  max-height: 800px;
-  overflow: visible;
-  text-align: center;
+	max-height: 800px;
+	overflow: visible;
+	text-align: center;
 }
 
 @media (max-width: 1200px) {
-  .wrapper-step {
-    grid-template-columns: 1fr;
-  }
+	.wrapper-step {
+		grid-template-columns: 1fr;
+	}
 
-  .wrapper-step .text {
-    flex-direction: column;
-  }
+	.wrapper-step .text {
+		flex-direction: column;
+	}
 
-  .wrapper-step .text div {
-    text-align: center;
-    margin-bottom: 40px;
-  }
+	.wrapper-step .text div {
+		text-align: center;
+		margin-bottom: 40px;
+	}
 
-  .wrapper-step .number {
-    font-size: 240px;
-  }
+	.wrapper-step .number {
+		font-size: 240px;
+	}
 
-  .step-1-image {
-    max-height: 700px;
-  }
+	.step-1-image {
+		max-height: 700px;
+	}
 }

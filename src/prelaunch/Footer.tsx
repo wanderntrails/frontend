@@ -1,17 +1,17 @@
-export default () => (
+const Footer = () => (
 	<footer className="bg-dark">
 		<div className="team">
 			<a href="https://www.linkedin.com/in/seyhankhan/" className="member">
 				<img src="/images/seyhan.png" alt="Seyhan Khan" className="avatar" />
 				<div>
-					<p>Co-founder, CTO</p>
+					<p>Co-founder</p>
 					<p>Seyhan Van Khan</p>
 				</div>
 			</a>
 			<a href="https://www.linkedin.com/in/alizehkhan/" className="member">
 				<img src="/images/alizeh.png" alt="Alizeh Khan" className="avatar" />
 				<div>
-					<p>Co-founder, CPO</p>
+					<p>Co-founder</p>
 					<p>Alizeh Khan</p>
 				</div>
 			</a>
@@ -23,3 +23,4 @@ export default () => (
 		<address>hello@wanderntrails.com</address>
 	</footer>
 )
+export default Footer

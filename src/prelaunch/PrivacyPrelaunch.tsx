@@ -1,8 +1,7 @@
 import Footer from "./Footer"
+import "./stylesheets/style.css"
 
-// import "./stylesheets/style.css"
-
-export default () => (
+const PrivacyPrelaunch = () => (
 	<>
 		<div className="container">
 			<a href="/">
@@ -152,3 +151,5 @@ export default () => (
 		<Footer />
 	</>
 )
+
+export default PrivacyPrelaunch

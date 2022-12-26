@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 @import url(components/background.css);
 @import url(components/buttons.css);
 @import url(components/container.css);
@@ -10,40 +10,15 @@
 @import url(components/step.css);
 
 :root {
-  --blueGray50: #F8FAFC;
-  --blueGray100: #F1F5F9;
-  --blueGray200: #E2E8F0;
-  --blueGray300: #CBD5E1;
-  --blueGray400: #94A3B8;
-  --blueGray500: #64748B;
-  --blueGray600: #475569;
-  --blueGray700: #334155;
-  --blueGray800: #1E293B;
-  --wandernOrange: #CF5C36;
-  --bodyFont: 'Open Sans', sans-serif;
-}
-
-* {
-  margin: 0;
-}
-
-body {
-  font-family: var(--bodyFont);
-  color: var(--blueGray700);
-  font-weight: 400;
-}
-
-h1, h2 {
-  font-size: 56px;
-  font-weight: 700;
-}
-
-a {
-  text-decoration: none;
-  color: var(--bodyFont);
-}
-
-img {
-  pointer-events: none;
-  user-select: none;
+	--blueGray50: #f8fafc;
+	--blueGray100: #f1f5f9;
+	--blueGray200: #e2e8f0;
+	--blueGray300: #cbd5e1;
+	--blueGray400: #94a3b8;
+	--blueGray500: #64748b;
+	--blueGray600: #475569;
+	--blueGray700: #334155;
+	--blueGray800: #1e293b;
+	--wandernOrange: #cf5c36;
+	--wandernOrangeHover: #c2410c;
 }

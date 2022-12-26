@@ -1,17 +1,20 @@
+import { Heading, Text } from "../design-system/components"
+import Features from "./Features"
 import Footer from "./Footer"
-
-// import "./stylesheets/style.css"
+import "./stylesheets/style.css"
 
 export default () => (
 	<>
 		<header className="bg-hero">
 			<div className="container">
 				<img src="/images/logo/logo.svg" className="center-logo" />
-				<h1 className="tagline">Plan your trail accommodation</h1>
-				<p className="description">
+				<Heading as="h1" className="tagline">
+					Plan your trail accommodation
+				</Heading>
+				<Text className="description" fontSize="font-size-6">
 					An easy way to find and book mountain huts and campsites on popular
 					hiking trails.
-				</p>
+				</Text>
 				<form
 					id="form-request-access"
 					className="hide-submit"
@@ -54,14 +57,16 @@ export default () => (
 			<section className="bg-gray">
 				<div className="container wrapper-step">
 					<div className="text">
-						<p className="number">1</p>
+						<Text fontFamily="font-family-serif" className="number">
+							1
+						</Text>
 						<div>
-							<h2>Explore your trail</h2>
-							<p>
+							<Heading>Explore your trail</Heading>
+							<Text fontSize="font-size-4">
 								Explore mountain huts and campsites along on your trail. See the
 								trail's stages, water sources, and resupply points.
-							</p>
-							<p className="request-access">Request access</p>
+							</Text>
+							<button className="request-access">Request access</button>
 						</div>
 					</div>
 					<div className="step-1-image">
@@ -80,14 +85,16 @@ export default () => (
 						alt="Preview of adding an accommodation to your itinerary and checking availability"
 					/>
 					<div className="text">
-						<p className="number">2</p>
+						<Text fontFamily="font-family-serif" className="number">
+							2
+						</Text>
 						<div>
-							<h2>Build your itinerary</h2>
-							<p>
+							<Heading>Build your itinerary</Heading>
+							<Text fontSize="font-size-4">
 								Check availability and add the campsite or hut you'd like to
 								stay at to your itinerary. See your trip unfold on the map.
-							</p>
-							<p className="request-access">Request access</p>
+							</Text>
+							<button className="request-access">Request access</button>
 						</div>
 					</div>
 				</div>
@@ -96,14 +103,16 @@ export default () => (
 			<section className="bg-gray">
 				<div className="container wrapper-step">
 					<div className="text">
-						<p className="number">3</p>
+						<Text fontFamily="font-family-serif" className="number">
+							3
+						</Text>
 						<div>
-							<h2>Confirm and book</h2>
-							<p>
+							<Heading>Confirm and book</Heading>
+							<Text fontSize="font-size-4">
 								Book and pay for all the accommodation in your itinerary in one
 								go without leaving the site.
-							</p>
-							<p className="request-access">Request access</p>
+							</Text>
+							<button className="request-access">Request access</button>
 						</div>
 					</div>
 					<img
@@ -112,37 +121,7 @@ export default () => (
 					/>
 				</div>
 			</section>
-			{/* FEATURES */}
-			<section className="bg-dark">
-				<div className="container">
-					<div className="features">
-						<div className="feature">
-							<img src="/images/features/bookings.svg" alt="Bookings icon" />
-							<p className="title">Manage Bookings</p>
-							<p className="description">
-								Message the host or add, amend, and cancel any bookings in your
-								itinerary.
-							</p>
-						</div>
-						<div className="feature">
-							<img src="/images/features/reviews.svg" alt="Reviews icon" />
-							<p className="title">Check Hikers Reviews</p>
-							<p className="description">
-								Read previous experiences at campsites and mountain huts from
-								hikers.
-							</p>
-						</div>
-						<div className="feature">
-							<img src="/images/features/export.svg" alt="Export icon" />
-							<p className="title">Export Itinerary</p>
-							<p className="description">
-								Export your itinerary's waypoints and route for use on any
-								offline map app.
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
+			<Features />
 		</main>
 		<Footer />
 	</>
