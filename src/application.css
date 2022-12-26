@@ -59,6 +59,10 @@ a.mapboxgl-ctrl-logo {
 	display: none;
 }
 
+.mapbox-improve-map {
+  display: none;
+}
+
 .mapboxgl-ctrl-compass {
 	width: 36px !important;
 	height: 36px !important;
