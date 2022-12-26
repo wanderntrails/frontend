@@ -57,15 +57,6 @@ const HomeSidebar = () => {
 				<Box height="60px" mx="auto" width="fit-content">
 					<WandernLogoFull />
 				</Box>
-				<Heading
-					size="xl"
-					color="white"
-					textAlign="center"
-					my="spacing-xs"
-					px="spacing-sm"
-				>
-					Plan your trail accommodation
-				</Heading>
 			</Box>
 			{trails
 				? trails.map(trail => (
