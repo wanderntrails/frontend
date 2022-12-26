@@ -54,7 +54,7 @@ const HomeSidebar = () => {
 	return (
 		<>
 			<Box p="spacing-sm" bg="neutral.700" position="sticky" top={0}>
-				<Box height="60px" mx="auto" width="fit-content">
+				<Box as="a" height="60px" href="/" sx={{ "> svg": { mx: "auto" } }}>
 					<WandernLogoFull />
 				</Box>
 			</Box>

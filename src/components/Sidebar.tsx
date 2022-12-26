@@ -15,14 +15,22 @@ const Sidebar = ({
 	return (
 		<Box className={`sidebar ${isExpanded ? "expand" : "collapse"}`}>
 			<Box
+				as="button"
+				border="none"
 				bg="neutral.100"
 				py="spacing-md"
 				position="absolute"
 				left="100%"
-				top="8px"
+				top="16px"
+				color="neutral.600"
 				fontSize="font-size-5"
 				display="flex"
 				alignItems="center"
+				borderBottomRightRadius="border-radius-sm"
+				borderTopRightRadius="border-radius-sm"
+				cursor="pointer"
+				//@ts-ignore
+				boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
 				onClick={toggleSidebar}
 				title={`${isExpanded ? "Expand" : "Collapse"} side panel`}
 			>

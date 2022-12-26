@@ -1,4 +1,4 @@
-import { IconHome } from "@tabler/icons"
+import { IconArrowLeft } from "@tabler/icons"
 import { useNavigate } from "react-router-dom"
 
 import { Box } from "../../../design-system/components"
@@ -17,7 +17,7 @@ const BackButton = () => {
 			border="none"
 			onClick={() => navigate("/map")}
 		>
-			<IconHome size={24} />
+			<IconArrowLeft strokeWidth={1.5} size={32} />
 		</Box>
 	)
 }
