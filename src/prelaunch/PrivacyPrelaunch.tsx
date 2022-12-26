@@ -1,3 +1,4 @@
+import { Box, Heading, Text } from "../design-system/components"
 import Footer from "./Footer"
 import "./stylesheets/style.css"
 
@@ -7,19 +8,21 @@ const PrivacyPrelaunch = () => (
 			<a href="/">
 				<img src="/images/logo/logo-dark.svg" className="center-logo" />
 			</a>
-			<div className="privacy">
-				<h1>Privacy Policy</h1>
-				<h2>Information we collect</h2>
-				<p>We currently collect and process the following information:</p>
+			<Box className="privacy">
+				<Heading size="xxl">Privacy Policy</Heading>
+				<Heading size="xl">Information we collect</Heading>
+				<Text>We currently collect and process the following information:</Text>
 				<ul>
 					<li>Your email address</li>
 					<li>Website user statistics</li>
 				</ul>
-				<h2>How we get the personal information and why we have it</h2>
-				<p>
+				<Heading size="xl">
+					How we get the personal information and why we have it
+				</Heading>
+				<Text>
 					Most of the personal information we process is provided to us directly
 					by you for one of the following reasons:
-				</p>
+				</Text>
 				<ul>
 					<li>
 						You provided your email address directly through our website to
@@ -27,10 +30,10 @@ const PrivacyPrelaunch = () => (
 					</li>
 				</ul>
 				<br />
-				<p>
+				<Text>
 					We also receive personal information indirectly, from the following
 					sources in the following scenarios:
-				</p>
+				</Text>
 				<ul>
 					<li>
 						We use analytics software such as Google Analytics on our website to
@@ -54,7 +57,7 @@ const PrivacyPrelaunch = () => (
 					</li>
 				</ul>
 				<br />
-				<p>We use the information that you have given us in order to</p>
+				<Text>We use the information that you have given us in order to</Text>
 				<ul>
 					<li>
 						To communicate with you in connection with the website,
@@ -68,10 +71,10 @@ const PrivacyPrelaunch = () => (
 					</li>
 				</ul>
 				<br />
-				<p>
+				<Text>
 					Under the General Data Protection Regulation (GDPR), the lawful bases
 					we rely on for processing this information are:
-				</p>
+				</Text>
 				<ul>
 					<li>
 						Your consent. You are able to remove your consent at any time. You
@@ -83,15 +86,15 @@ const PrivacyPrelaunch = () => (
 						</u>
 					</li>
 				</ul>
-				<h2>How we store your personal information</h2>
-				<p>
+				<Heading size="xl">How we store your personal information</Heading>
+				<Text>
 					Your information is securely stored on Airtable and Mailchimp. We keep
 					your email address for 5 years. We will then dispose your information
 					by permanently deleting both databases in which your email is stored.
-				</p>
+				</Text>
 				<br />
-				<h2>Your data protection rights</h2>
-				<p>Under data protection law, you have rights including:</p>
+				<Heading>Your data protection rights</Heading>
+				<Text>Under data protection law, you have rights including:</Text>
 				<br />
 				<ul>
 					<li>
@@ -125,19 +128,17 @@ const PrivacyPrelaunch = () => (
 					</li>
 				</ul>
 				<br />
-				<p>
+				<Text>
 					You are not required to pay any charge for exercising your rights. If
 					you make a request, we have one month to respond to you. Please
 					contact us at{" "}
-					<u>
-						<a href="mailto:hello@wanderntrails.com" target="_blank">
-							hello@wanderntrails.com
-						</a>
-					</u>
+					<a href="mailto:hello@wanderntrails.com" target="_blank">
+						hello@wanderntrails.com
+					</a>
 					if you wish to make a request.
-				</p>
-				<h2>How to complain</h2>
-				<p>
+				</Text>
+				<Heading>How to complain</Heading>
+				<Text>
 					If you have any concerns about our use of your personal information,
 					you can make a complaint to us at{" "}
 					<u>
@@ -145,8 +146,8 @@ const PrivacyPrelaunch = () => (
 							hello@wanderntrails.com
 						</a>
 					</u>
-				</p>
-			</div>
+				</Text>
+			</Box>
 		</div>
 		<Footer />
 	</>

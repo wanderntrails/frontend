@@ -1,24 +1,31 @@
 .privacy {
-  max-width: 760px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 120px;
+	max-width: 760px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 120px;
+	font-size: 20px;
+	color: var(--blueGray700);
+}
+
+.privacy a {
+	color: var(--wandernOrangeHover);
 }
 
 .privacy > h1 {
-  margin: 40px 0 50px 0;
-  letter-spacing: -0.02em;
-  text-align: center;
+	margin: 40px 0 50px 0;
+	letter-spacing: -0.02em;
+	text-align: center;
+	font-size: 56px;
 }
 
 .privacy > h2 {
-  font-size: 20px;
-  letter-spacing: -0.01em;
-  margin: 16px 0;
+	font-size: 24px;
+	letter-spacing: -0.01em;
+	margin: 16px 0;
 }
 
 @media (max-width: 992px) {
-  .privacy {
-    padding: 32px;
-  }
+	.privacy {
+		padding: 32px;
+	}
 }
