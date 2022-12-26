@@ -29,10 +29,8 @@ header .description {
 
 .ti-arrow-narrow-down {
 	color: white;
-	text-align: center;
-	font-size: 40px;
+	margin: 40px auto 0 auto;
 	display: block;
-	margin-top: 40px;
 	cursor: pointer;
 	animation-name: bounce;
 	animation-duration: 1s;

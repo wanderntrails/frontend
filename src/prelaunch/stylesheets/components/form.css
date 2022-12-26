@@ -5,10 +5,10 @@ form {
 
 input {
 	user-select: none;
-	padding: 16px 0 16px 16px;
+	padding: 16px;
 	border-radius: 8px 0 0 8px;
 	border: none;
-	font-size: 16px;
+	font-size: 18px;
 	width: 260px;
 	color: var(--blueGray700);
 	box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.56);
@@ -26,11 +26,7 @@ input:hover {
 	justify-content: center;
 	align-items: center;
 	width: 60px;
-}
-
-.ti-send {
-	color: white;
-	font-size: 24px;
+	cursor: pointer;
 }
 
 .input-message {
@@ -69,22 +65,12 @@ input:hover {
 	}
 }
 
-form.hide-submit input[type="submit"] {
-	display: none;
-}
-
-form.hide-submit label:hover {
-	background: #ba5331;
-	cursor: pointer;
-}
-
 ::placeholder {
 	color: var(--blueGray500);
 }
 
 input:first-of-type:focus {
-	outline: none;
-	border: var(--wandernOrange) solid 3px;
+	outline: var(--wandernOrange) solid 3px;
 	border-radius: 8px;
 }
 
