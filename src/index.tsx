@@ -1,6 +1,6 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { ThemeProvider } from "styled-components"
 
 import App from "./App"
@@ -19,6 +19,7 @@ root.render(
 						<Route index element={<HomePrelaunch />} />
 						<Route path="privacy" element={<PrivacyPrelaunch />} />
 						<Route path="map/*" element={<App />} />
+						<Route path="*" element={<Navigate to="/" replace />} />
 					</Routes>
 				</BrowserRouter>
 			</ContextProvider>
