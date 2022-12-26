@@ -2,30 +2,35 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; }
+	box-sizing: border-box;
+}
 
 * {
-  margin: 0;
-  padding: 0;
-  font-family: "Source Sans Pro", sans-serif; }
+	margin: 0;
+	padding: 0;
+	font-family: "Source Sans Pro", sans-serif;
+}
 
 body {
-  -webkit-font-smoothing: antialiased;
-  font-synthesis: none; }
+	-webkit-font-smoothing: antialiased;
+	font-synthesis: none;
+}
 
 img,
 picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%; }
+	display: block;
+	max-width: 100%;
+}
 
 input,
 button,
 textarea,
 select {
-  font: inherit; }
+	font: inherit;
+}
 
 p,
 h1,
@@ -34,180 +39,223 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
-  line-height: 1.4; }
+	overflow-wrap: break-word;
+	line-height: 1.4;
+}
 
 #map {
-  width: 100vw;
-  height: 100vh; }
+	width: 100vw;
+	height: 100vh;
+}
 
 canvas.mapboxgl-canvas {
-  outline: none; }
+	outline: none;
+}
 
 a.mapboxgl-ctrl-logo {
-  display: none; }
+	display: none;
+}
 
 .mapboxgl-ctrl-compass {
-  width: 40px !important;
-  height: 40px !important;
-  right: 8px !important;
-  border-radius: 50%; }
-  .mapboxgl-ctrl-compass .mapboxgl-ctrl-icon {
-    background-image: url("../public/svg/map-controls/compass.svg") !important; }
+	width: 36px !important;
+	height: 36px !important;
+	right: 8px !important;
+	border-radius: 50%;
+}
+.mapboxgl-ctrl-compass .mapboxgl-ctrl-icon {
+	background-image: url("../public/svg/map-controls/compass.svg") !important;
+}
 
 .mapboxgl-ctrl-group {
-  border-radius: 50%; }
+	border-radius: 50%;
+}
 
 .mapboxgl-ctrl-group:not(:empty) {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1); }
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 .mapboxgl-ctrl-styles {
-  display: flex;
-  border-radius: 4px; }
+	display: flex;
+	border-radius: 4px;
+}
 
 .mapboxgl-ctrl-styles button {
-  border-radius: 4px;
-  width: auto;
-  padding: 0 8px; }
-  .mapboxgl-ctrl-styles button:active {
-    background: #f1f5f9;
-    font-weight: bold; }
+	border-radius: 4px;
+	width: auto;
+	padding: 0 8px;
+}
+.mapboxgl-ctrl-styles button:active {
+	background: #f1f5f9;
+	font-weight: bold;
+}
 
 .mapboxgl-ctrl-group button + button {
-  border-top: none; }
+	border-top: none;
+}
 
 .coordinates {
-  z-index: 3;
-  font-size: 16px;
-  position: absolute;
-  bottom: 16px;
-  left: 50vw; }
+	z-index: 3;
+	font-size: 16px;
+	position: absolute;
+	bottom: 16px;
+	left: 50vw;
+}
 
 .marker {
-  cursor: pointer; }
+	cursor: pointer;
+}
 
 /* ------------------------------ TRAIL MARKER ------------------------------ */
 .marker-trail:hover {
-  width: 48px;
-  height: 48px; }
+	width: 48px;
+	height: 48px;
+}
 
 /* -------------------------- ACCOMMODATION MARKER -------------------------- */
 .marker-accom {
-  width: 44px;
-  height: 44px; }
-  .marker-accom:hover {
-    width: 48px;
-    height: 48px; }
+	width: 44px;
+	height: 44px;
+}
+.marker-accom:hover {
+	width: 48px;
+	height: 48px;
+}
 
 /* ---------------------------- TRAILSTAGE MARKER --------------------------- */
 .marker-trailstage {
-  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-  background-color: #334155;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 20px;
-  width: 20px;
-  font-size: 12px;
-  border: 2px solid white;
-  font-weight: bold; }
-  .marker-trailstage.start {
-    background: #047857;
-    height: 20px;
-    width: 20px; }
-    .marker-trailstage.start:hover {
-      height: 24px;
-      width: 24px; }
-  .marker-trailstage.end {
-    background: none; }
-  .marker-trailstage:hover {
-    height: 24px;
-    width: 24px;
-    font-size: 14px; }
+	box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3),
+		0 1px 3px 1px rgba(60, 64, 67, 0.15);
+	background-color: #334155;
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 20px;
+	width: 20px;
+	font-size: 12px;
+	border: 2px solid white;
+	font-weight: bold;
+}
+.marker-trailstage.start {
+	background: #047857;
+	height: 20px;
+	width: 20px;
+}
+.marker-trailstage.start:hover {
+	height: 24px;
+	width: 24px;
+}
+.marker-trailstage.end {
+	background: none;
+}
+.marker-trailstage:hover {
+	height: 24px;
+	width: 24px;
+	font-size: 14px;
+}
 
 .sidebar {
-  height: 100vh;
-  width: 400px;
-  z-index: 0;
-  background: #f1f5f9;
-  pointer-events: auto;
-  position: absolute;
-  top: 0;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); }
-  .sidebar.collapse {
-    animation-name: collapseSidebar;
-    animation-duration: 200ms;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-    animation-timing-function: ease-out; }
-  .sidebar.expand {
-    animation-name: expandSidebar;
-    animation-duration: 200ms;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-    animation-timing-function: ease-in; }
+	height: 100vh;
+	width: 400px;
+	z-index: 0;
+	background: #f1f5f9;
+	pointer-events: auto;
+	position: absolute;
+	top: 0;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+.sidebar.collapse {
+	animation-name: collapseSidebar;
+	animation-duration: 200ms;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	animation-timing-function: ease-out;
+}
+.sidebar.expand {
+	animation-name: expandSidebar;
+	animation-duration: 200ms;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	animation-timing-function: ease-in;
+}
 
 @keyframes collapseSidebar {
-  from {
-    left: 0px; }
-  to {
-    left: -400px; } }
+	from {
+		left: 0px;
+	}
+	to {
+		left: -400px;
+	}
+}
 
 @keyframes expandSidebar {
-  from {
-    left: -400px; }
-  to {
-    left: 0px; } }
+	from {
+		left: -400px;
+	}
+	to {
+		left: 0px;
+	}
+}
 
 .sidebar-toggle {
-  user-select: none;
-  background: #f8fafc;
-  padding: 10px 0 10px 0;
-  position: absolute;
-  left: 100%;
-  top: 8px;
-  font-size: 20px;
-  border-radius: 0 8px 8px 0;
-  display: flex;
-  align-items: center;
-  border-left: 1px solid #cbd5e1; }
-  .sidebar-toggle:hover {
-    background: #e2e8f0;
-    cursor: pointer; }
+	user-select: none;
+	background: #f8fafc;
+	padding: 10px 0 10px 0;
+	position: absolute;
+	left: 100%;
+	top: 8px;
+	font-size: 20px;
+	border-radius: 0 8px 8px 0;
+	display: flex;
+	align-items: center;
+	border-left: 1px solid #cbd5e1;
+}
+.sidebar-toggle:hover {
+	background: #e2e8f0;
+	cursor: pointer;
+}
 
 .logo-satellite-wrapper {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: calc(100vw - 400px);
-  height: 100vh;
-  top: 0;
-  right: 0;
-  pointer-events: none; }
-  .logo-satellite-wrapper.collapse {
-    animation-name: expandLogoSatelliteWrapper;
-    animation-fill-mode: forwards;
-    animation-duration: 200ms;
-    animation-play-state: running;
-    animation-timing-function: ease-out; }
-  .logo-satellite-wrapper.expand {
-    animation-name: shrinkLogoSatelliteWrapper;
-    animation-fill-mode: forwards;
-    animation-duration: 200ms;
-    animation-play-state: running;
-    animation-timing-function: ease-in; }
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: calc(100vw - 400px);
+	height: 100vh;
+	top: 0;
+	right: 0;
+	pointer-events: none;
+}
+.logo-satellite-wrapper.collapse {
+	animation-name: expandLogoSatelliteWrapper;
+	animation-fill-mode: forwards;
+	animation-duration: 200ms;
+	animation-play-state: running;
+	animation-timing-function: ease-out;
+}
+.logo-satellite-wrapper.expand {
+	animation-name: shrinkLogoSatelliteWrapper;
+	animation-fill-mode: forwards;
+	animation-duration: 200ms;
+	animation-play-state: running;
+	animation-timing-function: ease-in;
+}
 
 @keyframes expandLogoSatelliteWrapper {
-  from {
-    width: calc(100vw - 400px); }
-  to {
-    width: calc(100vw); } }
+	from {
+		width: calc(100vw - 400px);
+	}
+	to {
+		width: calc(100vw);
+	}
+}
 
 @keyframes shrinkLogoSatelliteWrapper {
-  from {
-    width: calc(100vw); }
-  to {
-    width: calc(100vw - 400px); } }
+	from {
+		width: calc(100vw);
+	}
+	to {
+		width: calc(100vw - 400px);
+	}
+}

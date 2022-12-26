@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 import { BASE_URL, MapMarkers, useMap } from "../../MapContext"
-import Box from "../../design-system/components/Box/Box"
+import { Box } from "../../design-system/components"
 import Heading from "../../design-system/components/Heading/Heading"
 import { Trail } from "../../interfaces"
 import { AccomMarker, StageMarker, resetMarkers } from "../MapMarker"
@@ -12,7 +12,7 @@ import StatsCard from "./trail/StatsCard"
 import TrailstagesCard from "./trail/TrailstagesCard"
 import TransportCard from "./trail/TransportCard"
 
-export default () => {
+const TrailSidebar = () => {
 	const params = useParams()
 	const trailURL = (params.trail ?? "").toLowerCase()
 
@@ -96,3 +96,5 @@ export default () => {
 		</>
 	)
 }
+
+export default TrailSidebar

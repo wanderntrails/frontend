@@ -1,12 +1,11 @@
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons"
-import React from "react"
 import { Route, Routes } from "react-router-dom"
 
-import Box from "../design-system/components/Box/Box"
+import { Box } from "../design-system/components"
 import HomeSidebar from "./sidebar/HomeSidebar"
 import TrailSidebar from "./sidebar/TrailSidebar"
 
-export default ({
+const Sidebar = ({
 	isExpanded,
 	toggleSidebar,
 }: {
@@ -38,3 +37,5 @@ export default ({
 		</Box>
 	)
 }
+
+export default Sidebar

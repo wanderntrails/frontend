@@ -1,10 +1,9 @@
-import React from "react"
 import { ThemeProvider } from "styled-components"
 
 import theme from "../../design-system/theme"
 import { TrailOverview } from "../../interfaces"
 
-export default ({ trail }: { trail: TrailOverview }) => {
+const TrailPopup = ({ trail }: { trail: TrailOverview }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			{trail.name}
@@ -37,3 +36,5 @@ export default ({ trail }: { trail: TrailOverview }) => {
 		</ThemeProvider>
 	)
 }
+
+export default TrailPopup

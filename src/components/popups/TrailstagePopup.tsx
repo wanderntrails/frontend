@@ -1,12 +1,11 @@
 import { IconArrowDownRight, IconArrowUpRight, IconWalk } from "@tabler/icons"
-import React from "react"
 import { ThemeProvider } from "styled-components"
 
-import Box from "../../design-system/components/Box/Box"
+import { Box } from "../../design-system/components"
 import theme from "../../design-system/theme"
 import { TrailStage } from "../../interfaces"
 
-export default ({
+const TrailstagePopup = ({
 	trailstage,
 	isFinishStage,
 }: {
@@ -96,3 +95,5 @@ export default ({
 		</ThemeProvider>
 	)
 }
+
+export default TrailstagePopup

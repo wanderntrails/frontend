@@ -11,7 +11,7 @@ export type ThemeSpecification = {
 
 type ColorFamily = "neutral" | "primary" | "green" | "yellow" | "red" | "blue"
 
-type ColorScale = 100 | 200 | 300 | 400 | 500 | 600 | 700
+type ColorScale = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800
 
 export type Color =
 	| `${ColorFamily}.${ColorScale}`
@@ -19,7 +19,7 @@ export type Color =
 	| "inherit"
 	| "transparent"
 
-export type FontFamily = `font-family-${"sans-serif" | "serif" | "monospace"}`
+export type FontFamily = `font-family-${"sans-serif" | "serif"}`
 
 export type FontSize = `font-size-${1 | 2 | 3 | 4 | 5 | 6 | 7}`
 

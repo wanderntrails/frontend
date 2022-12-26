@@ -1,8 +1,6 @@
-import React from "react"
-
 import theme from "../../design-system/theme"
 
-export default () => (
+const WandernLogoFull = () => (
 	<svg
 		height="60"
 		viewBox="0 0 90 80"
@@ -28,3 +26,5 @@ export default () => (
 		/>
 	</svg>
 )
+
+export default WandernLogoFull

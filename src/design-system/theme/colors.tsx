@@ -9,6 +9,7 @@ const colors: ThemeSpecification["colors"] = {
 		"500": "#64748B",
 		"600": "#475569",
 		"700": "#334155",
+		"800": "#1E293B",
 	},
 	primary: {
 		"100": "#FFEDD5",
@@ -18,6 +19,7 @@ const colors: ThemeSpecification["colors"] = {
 		"500": "#F97316",
 		"600": "#EA580C",
 		"700": "#C2410C",
+		"800": "#9A3412",
 	},
 	green: {
 		"100": "#D1FAE5",
@@ -27,6 +29,7 @@ const colors: ThemeSpecification["colors"] = {
 		"500": "#10B981",
 		"600": "#059669",
 		"700": "#047857",
+		"800": "#166534",
 	},
 	yellow: {
 		"100": "#FEF3C7",
@@ -36,6 +39,7 @@ const colors: ThemeSpecification["colors"] = {
 		"500": "#F59E0B",
 		"600": "#D97706",
 		"700": "#B45309",
+		"800": "#B45309",
 	},
 	red: {
 		"100": "#FEE2E2",
@@ -45,6 +49,7 @@ const colors: ThemeSpecification["colors"] = {
 		"500": "#EF4444",
 		"600": "#DC2626",
 		"700": "#B91C1C",
+		"800": "#B91C1C",
 	},
 	blue: {
 		"100": "#DBEAFE",
@@ -54,6 +59,7 @@ const colors: ThemeSpecification["colors"] = {
 		"500": "#3B82F6",
 		"600": "#2563EB",
 		"700": "#1D4ED8",
+		"800": "#1D4ED8",
 	},
 }
 

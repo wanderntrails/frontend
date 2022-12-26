@@ -5,15 +5,15 @@ import {
 	IconWalk,
 } from "@tabler/icons"
 
-import Box from "../../../design-system/components/Box/Box"
-import Heading from "../../../design-system/components/Heading/Heading"
+import { Box, Heading, Text } from "../../../design-system/components"
+import theme from "../../../design-system/theme"
 import { TrailStage } from "../../../interfaces"
 
 const TrailstagesCard = ({ stages }: { stages?: TrailStage[] }) =>
 	stages ? (
 		<Box p="spacing-lg" bg="white">
-			<IconDirections />
-			<Heading as="h2" color="neutral.500" mb="spacing-xs" size="md">
+			<IconDirections color={theme.colors.neutral[600]} />
+			<Heading as="h2" color="neutral.500" my="spacing-xxs" size="md">
 				{stages.length - 1} Trail Stages
 			</Heading>
 			<Box display="flex">
@@ -30,9 +30,9 @@ const TrailstagesCard = ({ stages }: { stages?: TrailStage[] }) =>
 					justifyContent="center"
 					fontSize="font-size-2"
 				/>
-				<Box as="p" fontWeight="font-weight-bold" ml="spacing-sm">
+				<Text bold ml="spacing-sm">
 					{stages[0].name}
-				</Box>
+				</Text>
 			</Box>
 			{stages.slice(1).map((stage, index) => (
 				<Box key={index}>
@@ -99,9 +99,9 @@ const TrailstagesCard = ({ stages }: { stages?: TrailStage[] }) =>
 								{stage.order_number}
 							</Box>
 						)}
-						<Box as="p" fontWeight="font-weight-bold" ml="spacing-sm">
+						<Text bold ml="spacing-sm">
 							{stage.name}
-						</Box>
+						</Text>
 					</Box>
 				</Box>
 			))}

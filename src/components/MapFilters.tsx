@@ -1,13 +1,11 @@
-import React from "react"
-
 import { useMap } from "../MapContext"
-import Box from "../design-system/components/Box/Box"
+import { Box } from "../design-system/components"
 import { FilterProps } from "../interfaces"
 import CampsiteFilter from "./filters/CampsiteFilter"
 import HutFilter from "./filters/HutFilter"
 import StageFilter from "./filters/StageFilter"
 
-export default () => {
+const MapFilters = () => {
 	const { mapMarkers } = useMap()
 
 	const toggleDisplay: FilterProps["toggleDisplay"] =
@@ -23,7 +21,7 @@ export default () => {
 		<Box
 			position="absolute"
 			top="16px"
-			right="16px"
+			right="8px"
 			zIndex={3}
 			display="flex"
 			gap="spacing-xs"
@@ -37,3 +35,5 @@ export default () => {
 		</Box>
 	) : null
 }
+
+export default MapFilters

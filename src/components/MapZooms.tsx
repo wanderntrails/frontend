@@ -1,10 +1,10 @@
 import { IconMinus, IconPlus } from "@tabler/icons"
-import React from "react"
 
 import { useMap } from "../MapContext"
-import Box from "../design-system/components/Box/Box"
+import { Box } from "../design-system/components"
+import theme from "../design-system/theme"
 
-export default () => {
+const MapZooms = () => {
 	const { map } = useMap()
 
 	return (
@@ -15,35 +15,39 @@ export default () => {
 			zIndex={2}
 			position="absolute"
 			bottom="80px"
-			right="16px"
+			right="8px"
 			display="flex"
 			flexDirection="column"
 			borderRadius="border-radius-md"
+			justifyContent="center"
+			alignItems="center"
 		>
 			<Box
 				as="button"
 				border="none"
 				cursor="pointer"
-				p="spacing-xxs"
+				p="spacing-xs"
 				backgroundColor="white"
 				title="Zoom in"
 				onClick={() => map.current && map.current.zoomIn()}
 			>
-				<IconPlus fontSize="font-size-3" />
+				<IconPlus size={20} color={theme.colors.neutral[700]} />
 			</Box>
 			<Box
 				as="button"
 				border="none"
 				borderTop="1px solid"
 				borderTopColor="neutral.200"
-				p="spacing-xxs"
+				p="spacing-xs"
 				backgroundColor="white"
 				cursor="pointer"
 				title="Zoom out"
 				onClick={() => map.current && map.current.zoomOut()}
 			>
-				<IconMinus fontSize="font-size-3" />
+				<IconMinus size={20} color={theme.colors.neutral[700]} />
 			</Box>
 		</Box>
 	)
 }
+
+export default MapZooms

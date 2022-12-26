@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
-import Box from "../../design-system/components/Box/Box"
+import { Box, Text } from "../../design-system/components"
 import { FilterProps } from "../../interfaces"
 
 const StageFilter = ({ numStages, toggleDisplay }: FilterProps) => {
@@ -26,8 +26,8 @@ const StageFilter = ({ numStages, toggleDisplay }: FilterProps) => {
 		>
 			<Box
 				borderRadius="border-radius-circle"
-				height="24px"
-				width="24px"
+				height="20px"
+				width="20px"
 				fontSize="font-size-1"
 				bg="neutral.700"
 				color="white"
@@ -35,12 +35,13 @@ const StageFilter = ({ numStages, toggleDisplay }: FilterProps) => {
 				alignItems="center"
 				justifyContent="center"
 				fontWeight="font-weight-bold"
+				background={isHidden ? "neutral.400" : "neutral.700"}
 			>
 				{numStages}
 			</Box>
-			<Box as="p" fontWeight="font-weight-bold">
+			<Text bold fontSize="font-size-2">
 				Stages
-			</Box>
+			</Text>
 		</Box>
 	)
 }

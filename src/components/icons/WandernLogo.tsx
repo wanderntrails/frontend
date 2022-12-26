@@ -1,10 +1,8 @@
-import React from "react"
-
 import { useMap } from "../../MapContext"
-import Box from "../../design-system/components/Box/Box"
+import { Box } from "../../design-system/components"
 import theme from "../../design-system/theme"
 
-export default () => {
+const WandernLogo = () => {
 	const { isSatellite } = useMap()
 	return (
 		<Box mx="auto" mt="spacing-lg">
@@ -23,3 +21,5 @@ export default () => {
 		</Box>
 	)
 }
+
+export default WandernLogo

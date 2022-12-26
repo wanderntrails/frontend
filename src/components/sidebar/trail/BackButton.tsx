@@ -1,8 +1,7 @@
 import { IconHome } from "@tabler/icons"
-import React from "react"
 import { useNavigate } from "react-router-dom"
 
-import Box from "../../../design-system/components/Box/Box"
+import { Box } from "../../../design-system/components"
 
 const BackButton = () => {
 	const navigate = useNavigate()

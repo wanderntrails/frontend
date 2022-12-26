@@ -2,14 +2,13 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { BASE_URL, useMap } from "../../MapContext"
-import Box from "../../design-system/components/Box/Box"
-import Heading from "../../design-system/components/Heading/Heading"
+import { Box, Heading } from "../../design-system/components"
 import { TrailOverview } from "../../interfaces"
 import { TrailMarker, resetMarkers } from "../MapMarker"
 import TrailCard from "../cards/TrailCard"
 import WandernLogoFull from "../icons/WandernLogoFull"
 
-export default () => {
+const HomeSidebar = () => {
 	const navigate = useNavigate()
 	const { map, setMapMarkers } = useMap()
 	const [trails, setTrails] = useState<TrailOverview[] | null>(null)
@@ -59,11 +58,11 @@ export default () => {
 					<WandernLogoFull />
 				</Box>
 				<Heading
-					as="h1"
-					size="lg"
+					size="xl"
 					color="white"
 					textAlign="center"
 					my="spacing-xs"
+					px="spacing-sm"
 				>
 					Plan your trail accommodation
 				</Heading>
@@ -78,3 +77,5 @@ export default () => {
 		</>
 	)
 }
+
+export default HomeSidebar

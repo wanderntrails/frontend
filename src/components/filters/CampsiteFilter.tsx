@@ -1,7 +1,7 @@
 import { IconTent } from "@tabler/icons"
-import React, { useState } from "react"
+import { useState } from "react"
 
-import Box from "../../design-system/components/Box/Box"
+import { Box, Text } from "../../design-system/components"
 import { FilterProps } from "../../interfaces"
 
 const CampsiteFilter = ({ toggleDisplay }: FilterProps) => {
@@ -25,9 +25,9 @@ const CampsiteFilter = ({ toggleDisplay }: FilterProps) => {
 			gap="spacing-xs"
 		>
 			<IconTent size={20} />
-			<Box as="p" fontWeight="font-weight-bold">
+			<Text bold fontSize="font-size-2">
 				Campsites
-			</Box>
+			</Text>
 		</Box>
 	)
 }

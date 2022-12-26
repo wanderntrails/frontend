@@ -2,9 +2,9 @@ import { useEffect } from "react"
 import { matchPath, useLocation } from "react-router-dom"
 
 import { useMap } from "../MapContext"
-import Box from "../design-system/components/Box/Box"
+import { Box } from "../design-system/components"
 
-export default () => {
+const MapSatelliteToggle = () => {
 	const { pathname } = useLocation()
 
 	const { map, isSatellite, setIsSatellite } = useMap()
@@ -76,3 +76,5 @@ export default () => {
 		</Box>
 	)
 }
+
+export default MapSatelliteToggle

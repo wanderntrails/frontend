@@ -1,11 +1,10 @@
-import React from "react"
 import { ThemeProvider } from "styled-components"
 
-import Box from "../../design-system/components/Box/Box"
+import { Box } from "../../design-system/components"
 import theme from "../../design-system/theme"
 import { Accom } from "../../interfaces"
 
-export default ({ accom }: { accom: Accom }) => {
+const AccomPopup = ({ accom }: { accom: Accom }) => {
 	return (
 		<ThemeProvider theme={theme}>
 			<Box as="a" href={accom.website} target="_blank" textDecoration="none">
@@ -42,3 +41,5 @@ export default ({ accom }: { accom: Accom }) => {
 		</ThemeProvider>
 	)
 }
+
+export default AccomPopup

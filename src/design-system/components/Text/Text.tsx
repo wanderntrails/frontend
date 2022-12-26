@@ -10,6 +10,7 @@ import { ResponsiveValue, SpaceProps } from "styled-system"
 
 import {
 	Color,
+	FontFamily,
 	FontSize,
 	Space,
 	ThemeSpecification,
@@ -19,18 +20,21 @@ import Box from "../Box/Box"
 type TextProps = {
 	children: ReactNode
 	as?: "p" | "span"
-	fontSize?: FontSize
 	color?: Color
+	bold?: boolean
+	fontFamily?: FontFamily
+	fontSize?: ResponsiveValue<FontSize>
 	textAlign?: ResponsiveValue<CSS.Property.TextAlign>
 } & Omit<HTMLAttributes<HTMLParagraphElement>, keyof CSSProperties | "style"> &
 	SpaceProps<ThemeSpecification, Space | "auto" | 0>
 
 const Text = forwardRef((props: TextProps, ref?: Ref<HTMLParagraphElement>) => {
-	const { as = "p", color = "neutral.700", ...restProps } = props
+	const { as = "p", color = "neutral.800", bold = false, ...restProps } = props
 
 	return (
 		<Box
 			as={as}
+			fontWeight={bold ? "font-weight-bold" : "font-weight-normal"}
 			fontFamily="font-family-sans-serif"
 			lineHeight="line-height-text"
 			color={color}

@@ -2,20 +2,23 @@ import { IconTree } from "@tabler/icons"
 import { Fragment } from "react"
 import ReactMarkdown from "react-markdown"
 
-import Box from "../../../design-system/components/Box/Box"
-import Heading from "../../../design-system/components/Heading/Heading"
+import { Box, Heading, Text } from "../../../design-system/components"
 
-export default ({ description }: { description?: string }) =>
+const CampingRulesCard = ({ description }: { description?: string }) =>
 	description ? (
 		<Box m="spacing-lg">
-			<IconTree />
-			<Heading as="h2" color="neutral.500" mb="spacing-xs" size="md">
+			<Box color="neutral.600">
+				<IconTree />
+			</Box>
+			<Heading as="h2" color="neutral.500" my="spacing-xxs" size="md">
 				Wild Camping Rules
 			</Heading>
-			<Box as="p">
+			<Text>
 				<ReactMarkdown components={{ p: Fragment }}>
 					{description}
 				</ReactMarkdown>
-			</Box>
+			</Text>
 		</Box>
 	) : null
+
+export default CampingRulesCard

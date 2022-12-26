@@ -1,11 +1,10 @@
 import { IconClock, IconMountain, IconRuler } from "@tabler/icons"
-import React from "react"
 
-import Box from "../../../design-system/components/Box/Box"
+import { Box } from "../../../design-system/components"
 import { Trail } from "../../../interfaces"
 import StatCard from "./StatCard"
 
-export default ({ trail }: { trail: Trail | null }) =>
+const StatsCard = ({ trail }: { trail: Trail | null }) =>
 	trail ? (
 		<Box bg="neutral.200" p="spacing-md">
 			<Box display="flex">
@@ -16,7 +15,7 @@ export default ({ trail }: { trail: Trail | null }) =>
 				/>
 				<StatCard
 					Icon={IconClock}
-					value={`${trail.stages.length} days`}
+					value={`${trail.stages.length - 1} days`}
 					title="Duration"
 				/>
 				<StatCard
@@ -27,3 +26,5 @@ export default ({ trail }: { trail: Trail | null }) =>
 			</Box>
 		</Box>
 	) : null
+
+export default StatsCard

@@ -3,11 +3,11 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import { MapContext } from "../../MapContext"
-import Box from "../../design-system/components/Box/Box"
+import { Box } from "../../design-system/components"
 import Heading from "../../design-system/components/Heading/Heading"
 import { TrailOverview } from "../../interfaces"
 
-export default ({
+const TrailCard = ({
 	trail,
 	map,
 }: {
@@ -73,3 +73,5 @@ export default ({
 		</Box>
 	)
 }
+
+export default TrailCard

@@ -1,5 +1,4 @@
 import { Marker, Popup } from "mapbox-gl"
-import React from "react"
 import { renderToString } from "react-dom/server"
 import { NavigateFunction } from "react-router-dom"
 

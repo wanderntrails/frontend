@@ -2,10 +2,9 @@ import { IconBus } from "@tabler/icons"
 import { Fragment } from "react"
 import ReactMarkdown from "react-markdown"
 
-import Box from "../../../design-system/components/Box/Box"
-import Heading from "../../../design-system/components/Heading/Heading"
+import { Box, Heading, Text } from "../../../design-system/components/"
 
-export default ({
+const TransportCard = ({
 	transport_to,
 	transport_from,
 }: {
@@ -23,30 +22,34 @@ export default ({
 				},
 			}}
 		>
-			<IconBus />
+			<Box color="neutral.600">
+				<IconBus />
+			</Box>
 			{transport_to !== "\n" && (
 				<>
-					<Heading as="h2" color="neutral.500" mb="spacing-xs" size="md">
+					<Heading as="h2" color="neutral.500" my="spacing-xxs" size="md">
 						Transport to start
 					</Heading>
-					<Box as="p">
+					<Text>
 						<ReactMarkdown components={{ p: Fragment }}>
 							{transport_to}
 						</ReactMarkdown>
-					</Box>
+					</Text>
 				</>
 			)}
 			{transport_from !== "\n" && (
 				<Box mt="spacing-lg">
-					<Heading as="h2" color="neutral.500" mb="spacing-xs" size="md">
+					<Heading as="h2" color="neutral.500" my="spacing-xxs" size="md">
 						Transport from end
 					</Heading>
-					<Box as="p">
+					<Text>
 						<ReactMarkdown components={{ p: Fragment }}>
 							{transport_from}
 						</ReactMarkdown>
-					</Box>
+					</Text>
 				</Box>
 			)}
 		</Box>
 	) : null
+
+export default TransportCard

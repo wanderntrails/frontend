@@ -1,9 +1,7 @@
-import React from "react"
-
 import { useMap } from "../MapContext"
 import theme from "../design-system/theme"
 
-export default () => {
+const Coordinates = () => {
 	const { coordinates, isSatellite } = useMap()
 
 	return (
@@ -23,3 +21,5 @@ export default () => {
 		</table>
 	)
 }
+
+export default Coordinates

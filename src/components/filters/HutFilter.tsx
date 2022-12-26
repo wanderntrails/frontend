@@ -1,7 +1,7 @@
 import { IconBed } from "@tabler/icons"
-import React, { useState } from "react"
+import { useState } from "react"
 
-import Box from "../../design-system/components/Box/Box"
+import { Box, Text } from "../../design-system/components"
 import { FilterProps } from "../../interfaces"
 
 const HutFilter = ({ toggleDisplay }: FilterProps) => {
@@ -25,9 +25,9 @@ const HutFilter = ({ toggleDisplay }: FilterProps) => {
 			gap="spacing-xs"
 		>
 			<IconBed size={20} />
-			<Box as="p" fontWeight="font-weight-bold">
+			<Text bold fontSize="font-size-2">
 				Huts
-			</Box>
+			</Text>
 		</Box>
 	)
 }

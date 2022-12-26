@@ -1,9 +1,8 @@
 import { TablerIcon } from "@tabler/icons"
-import React from "react"
 
-import Box from "../../../design-system/components/Box/Box"
+import { Box } from "../../../design-system/components"
 
-export default ({
+const StatCard = ({
 	Icon,
 	value,
 	title,
@@ -30,3 +29,5 @@ export default ({
 		</Box>
 	</Box>
 )
+
+export default StatCard
