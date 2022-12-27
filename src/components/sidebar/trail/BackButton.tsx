@@ -13,8 +13,10 @@ const BackButton = () => {
 			cursor="pointer"
 			borderRadius="border-radius-md"
 			width="fit-content"
-			ml="spacing-lg"
+			ml="spacing-md"
+			p="spacing-xxs"
 			border="none"
+			sx={{ ":hover": { bg: "neutral.600" } }}
 			onClick={() => navigate("/map")}
 		>
 			<IconArrowLeft strokeWidth={1.5} size={32} />

@@ -1,14 +1,13 @@
-<svg width="48" height="51" viewBox="0 0 48 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="46" height="49" viewBox="0 0 46 49" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_dd_1715_43)">
-<rect x="6" y="4" width="36" height="36" rx="18" fill="#C2410C" shape-rendering="crispEdges"/>
+<rect x="5" y="3" width="36" height="36" rx="18" fill="#C2410C" shape-rendering="crispEdges"/>
 <g clip-path="url(#clip0_1715_43)">
-<path d="M15 17V28M15 24H33M33 28V20C33 19.4696 32.7893 18.9609 32.4142 18.5858C32.0391 18.2107 31.5304 18 31 18H23V24" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M19 21C19.5523 21 20 20.5523 20 20C20 19.4477 19.5523 19 19 19C18.4477 19 18 19.4477 18 20C18 20.5523 18.4477 21 19 21Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14 16V27M14 23H32M32 27V19C32 18.4696 31.7893 17.9609 31.4142 17.5858C31.0391 17.2107 30.5304 17 30 17H22V23" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18 20C18.5523 20 19 19.5523 19 19C19 18.4477 18.5523 18 18 18C17.4477 18 17 18.4477 17 19C17 19.5523 17.4477 20 18 20Z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-<rect x="5.5" y="3.5" width="37" height="37" rx="18.5" stroke="white" shape-rendering="crispEdges"/>
 </g>
 <defs>
-<filter id="filter0_dd_1715_43" x="0.2" y="0.6" width="47.6" height="50" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_dd_1715_43" x="0.2" y="0.6" width="45.6" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.2"/>
@@ -25,7 +24,11 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_1715_43" result="shape"/>
 </filter>
 <clipPath id="clip0_1715_43">
+<<<<<<< HEAD
 <rect width="24" height="24" fill="white" transform="translate(12 10)"/>
+=======
+<rect x="11" y="9" width="24" height="24" fill="white"/>
+>>>>>>> fe9bed9 (feat: hover states new markers)
 </clipPath>
 </defs>
 </svg>

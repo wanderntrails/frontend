@@ -9,11 +9,11 @@ const TrailPopup = ({ trail }: { trail: TrailOverview }) => {
 			{trail.name}
 			<style type="text/css">{`
         .mapboxgl-popup-content {
-          border-radius: 16px;
+          border-radius: 4px;
           background: ${theme.colors.neutral[700]};
           color: white;
           font-size: ${theme.fontSizes["font-size-3"]};
-          padding: 8px 12px;
+          padding: 4px 8px;
           box-shadow: ${theme.shadows["shadow-lg"]}
         }
         .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,

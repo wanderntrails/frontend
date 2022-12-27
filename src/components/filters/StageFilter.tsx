@@ -13,10 +13,11 @@ const StageFilter = ({ numStages, toggleDisplay }: FilterProps) => {
 			border="none"
 			display="flex"
 			bg={isHidden ? "neutral.100" : "white"}
+			sx={{ ":hover": { bg: "neutral.100" } }}
 			color={isHidden ? "neutral.400" : "neutral.700"}
 			borderRadius="border-radius-pill"
 			py="spacing-xxs"
-			px="spacing-md"
+			px="spacing-xs"
 			//@ts-ignore
 			boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
 			cursor="pointer"
@@ -35,11 +36,15 @@ const StageFilter = ({ numStages, toggleDisplay }: FilterProps) => {
 				alignItems="center"
 				justifyContent="center"
 				fontWeight="font-weight-bold"
-				background={isHidden ? "neutral.400" : "neutral.700"}
+				backgroundColor={isHidden ? "neutral.400" : "neutral.700"}
 			>
 				{numStages}
 			</Box>
-			<Text bold fontSize="font-size-2">
+			<Text
+				bold
+				fontSize="font-size-2"
+				color={isHidden ? "neutral.400" : "neutral.700"}
+			>
 				Stages
 			</Text>
 		</Box>

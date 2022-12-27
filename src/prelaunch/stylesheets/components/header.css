@@ -51,7 +51,7 @@ header .description {
 
 @media screen and (max-width: 700px) {
 	header .tagline {
-		font-size: 40px;
+		font-size: 36px;
 		font-weight: bold;
 	}
 

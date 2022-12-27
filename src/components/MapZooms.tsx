@@ -27,6 +27,7 @@ const MapZooms = () => {
 				border="none"
 				cursor="pointer"
 				p="spacing-xs"
+				sx={{ ":hover": { bg: "neutral.100" } }}
 				backgroundColor="white"
 				title="Zoom in"
 				onClick={() => map.current && map.current.zoomIn()}
@@ -40,6 +41,7 @@ const MapZooms = () => {
 				borderTopColor="neutral.200"
 				p="spacing-xs"
 				backgroundColor="white"
+				sx={{ ":hover": { bg: "neutral.100" } }}
 				cursor="pointer"
 				title="Zoom out"
 				onClick={() => map.current && map.current.zoomOut()}

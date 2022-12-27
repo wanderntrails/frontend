@@ -20,7 +20,7 @@ const Footer = () => (
 			<img src="/images/logo/logo-footer.svg" alt="Wandern logo" />
 		</a>
 		<a href="/privacy">Privacy Policy</a>
-		<address>hello@wanderntrails.com</address>
+		{/* <address>hello@wanderntrails.com</address> */}
 	</footer>
 )
 export default Footer

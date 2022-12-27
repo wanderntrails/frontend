@@ -1,6 +1,7 @@
 form {
 	display: flex;
 	justify-content: center;
+	margin-top: 20px;
 }
 
 input {
@@ -18,6 +19,15 @@ input:hover {
 	background: var(--blueGray50);
 }
 
+input:focus {
+	outline: var(--wandernOrange) solid 3px;
+	border-radius: 8px;
+}
+
+::placeholder {
+	color: var(--blueGray500);
+}
+
 .btn-send {
 	background: var(--wandernOrange);
 	border: none;
@@ -27,6 +37,10 @@ input:hover {
 	align-items: center;
 	width: 60px;
 	cursor: pointer;
+}
+
+.btn-send:hover {
+	background: var(--wandernOrangeHover);
 }
 
 .input-message {
@@ -63,18 +77,4 @@ input:hover {
 	100% {
 		margin-left: 0rem;
 	}
-}
-
-::placeholder {
-	color: var(--blueGray500);
-}
-
-input:first-of-type:focus {
-	outline: var(--wandernOrange) solid 3px;
-	border-radius: 8px;
-}
-
-#form-request-access {
-	display: flex;
-	margin-top: 20px;
 }
