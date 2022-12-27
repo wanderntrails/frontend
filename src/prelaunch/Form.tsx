@@ -1,8 +1,13 @@
 import { IconSend } from "@tabler/icons"
+import { MutableRefObject } from "react"
 
 import { Box } from "../design-system/components"
 
-const Form = () => (
+const Form = ({
+	inputRef,
+}: {
+	inputRef: MutableRefObject<HTMLInputElement | null>
+}) => (
 	<Box
 		as="form"
 		id="form-request-access"
@@ -17,6 +22,7 @@ const Form = () => (
 			autoComplete="off"
 			placeholder="Email me when it's ready"
 			maxLength={100}
+			ref={inputRef}
 			required
 		/>
 		{/* <script>
