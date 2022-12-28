@@ -34,8 +34,8 @@ const Form = ({
 		fetch(`${BASE_URL}/request-access`, {
 			method: "POST",
 			body: new FormData(formRef.current ?? undefined),
-			// headers: { "X-CSRFToken": csrfToken },
-			// credentials: "include",
+			headers: { "X-CSRFToken": csrfToken },
+			credentials: "include",
 		}).then(({ ok }: Response) =>
 			ok ? window.location.assign("/map") : setInputError(true)
 		)
