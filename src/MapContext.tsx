@@ -1,4 +1,5 @@
-import mapboxgl, { Map, Marker, NavigationControl } from "mapbox-gl"
+// @ts-ignore
+import mapboxgl, { Map, Marker, NavigationControl } from "!mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
 import {
 	MutableRefObject,
