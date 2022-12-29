@@ -40,9 +40,9 @@ const TrailSidebar = () => {
 				)
 				setMapMarkers(trailMarkers)
 
-				map.current.setPitch(35)
-				map.current.fitBounds(json.bbox, {
-					padding: { top: 32, bottom: 64, left: 400 + 64, right: 100 },
+				map.current.setPitch(35).fitBounds(json.bbox, {
+					padding: { top: 0, bottom: 0, left: 400 + 32, right: 0 },
+					offset: [0, -32],
 				})
 				map.current.setLayoutProperty(trailURL, "visibility", "visible")
 

@@ -42,9 +42,7 @@ const HomeSidebar = () => {
 						title instanceof HTMLMetaElement && (title.content = document.title)
 				)
 
-				map.current.resetNorthPitch()
-				map.current.setCenter([-16, 52])
-				map.current.setZoom(3.37)
+				map.current.resetNorthPitch().setCenter([-16, 52]).setZoom(3.37)
 				json.forEach(({ url }: TrailOverview) => {
 					map.current?.setLayoutProperty(url, "visibility", "none")
 				})
