@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import { BASE_URL, useMap } from "../../MapContext"
-import { Box, Heading } from "../../design-system/components"
+import { BASE_URL, MAP_CENTER, MIN_ZOOM, useMap } from "../../MapContext"
+import { Box } from "../../design-system/components"
 import { TrailOverview } from "../../interfaces"
 import { TrailMarker, resetMarkers } from "../MapMarker"
 import TrailCard from "../cards/TrailCard"
@@ -42,7 +42,7 @@ const HomeSidebar = () => {
 						title instanceof HTMLMetaElement && (title.content = document.title)
 				)
 
-				map.current.resetNorthPitch().setCenter([-16, 52]).setZoom(3.37)
+				map.current.setCenter(MAP_CENTER).setZoom(MIN_ZOOM).resetNorthPitch()
 				json.forEach(({ url }: TrailOverview) => {
 					map.current?.setLayoutProperty(url, "visibility", "none")
 				})
@@ -56,13 +56,12 @@ const HomeSidebar = () => {
 					<WandernLogoFull />
 				</Box>
 			</Box>
-			{trails
-				? trails.map(trail => (
-						<TrailCard key={trail.url} trail={trail} map={map} />
-				  ))
-				: Array.from({ length: 10 }, (_, i) => (
-						<Box key={i} height="100px" bg="neutral.200" m="spacing-xs" />
-				  ))}
+			{trails?.map(trail => (
+				<TrailCard key={trail.url} trail={trail} map={map} />
+			)) ??
+				Array.from({ length: 10 }, (_, i) => (
+					<Box key={i} height="100px" bg="neutral.200" m="spacing-xs" />
+				))}
 		</>
 	)
 }

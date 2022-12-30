@@ -16,12 +16,19 @@ import { SetState } from "./interfaces"
 mapboxgl.accessToken =
 	"pk.eyJ1IjoidmFua2hhbiIsImEiOiJja3k5NHU5aWEwMnpyMnZvY3RsdnBmNnZpIn0.IGWjLj1iDXj0Tn3_MWMNyw"
 
-type MapMarkers = { [markerType: string]: Marker[] } | null
-
 export const BASE_URL =
 	process.env.NODE_ENV === "production" ? "https://api.wanderntrails.com" : ""
 
-interface MapContext {
+export const MAP_CENTER = [-12, 55]
+export const MIN_ZOOM = 3.85
+export const MAX_BOUNDS = [
+	[-57, 36],
+	[40, 66],
+]
+
+export type MapMarkers = { [markerType: string]: Marker[] } | null
+
+export interface MapContextProps {
 	mapContainer: MutableRefObject<HTMLDivElement | null>
 	map: MutableRefObject<Map | null>
 	coordinates: { lng: string; lat: string } | null
@@ -31,37 +38,32 @@ interface MapContext {
 	setMapMarkers: SetState<MapMarkers>
 }
 
-const Context = createContext<MapContext>({} as MapContext)
+export const MapContext = createContext<MapContextProps>({} as MapContextProps)
 
-const ContextProvider = ({ children }: { children: ReactNode }) => {
+export const MapProvider = ({ children }: { children: ReactNode }) => {
 	const mapContainer = useRef<HTMLDivElement | null>(null)
 	const map = useRef<Map | null>(null)
 
 	const [coordinates, setCoordinates] =
-		useState<MapContext["coordinates"]>(null)
+		useState<MapContextProps["coordinates"]>(null)
 	const [isSatellite, setIsSatellite] = useState(false)
 
 	const [mapMarkers, setMapMarkers] = useState<MapMarkers>(null)
 
 	useEffect(() => {
 		if (map.current) return // initialize map only once
-		if (!mapContainer.current) {
-			console.log("mapContainer.current is not on")
-			return
-		}
+		if (!mapContainer.current) return
+
 		map.current = new Map({
 			container: mapContainer.current,
 			style: "mapbox://styles/vankhan/ckm5gzob32y9c17pgbw4jwcaq",
 			customAttribution: `<a href="/privacy" target="_blank">© Wandern</a>`,
-			center: [-16, 52],
+			center: MAP_CENTER,
 			bearing: 0,
 			pitch: 0,
-			minZoom: 3.37,
-			zoom: 3.37,
-			maxBounds: [
-				[-57.4205, 36.36677],
-				[40.51238, 66.68575],
-			],
+			minZoom: MIN_ZOOM,
+			zoom: MIN_ZOOM,
+			maxBounds: MAX_BOUNDS,
 		})
 		map.current.addControl(
 			new NavigationControl({
@@ -82,7 +84,7 @@ const ContextProvider = ({ children }: { children: ReactNode }) => {
 	}, [])
 
 	return (
-		<Context.Provider
+		<MapContext.Provider
 			value={{
 				mapContainer,
 				map,
@@ -94,10 +96,8 @@ const ContextProvider = ({ children }: { children: ReactNode }) => {
 			}}
 		>
 			{children}
-		</Context.Provider>
+		</MapContext.Provider>
 	)
 }
 
-const useMap = () => useContext(Context)
-
-export { ContextProvider, Context, MapContext, MapMarkers, useMap }
+export const useMap = () => useContext(MapContext)

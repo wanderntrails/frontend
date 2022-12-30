@@ -1,14 +1,15 @@
-import { Marker, Popup } from "mapbox-gl"
+import { Map, Marker, Popup } from "mapbox-gl"
+import { MutableRefObject } from "react"
 import { renderToString } from "react-dom/server"
 import { NavigateFunction } from "react-router-dom"
 
-import { MapContext } from "../MapContext"
-import { Accom, TrailOverview, TrailStage } from "../interfaces"
+import { MapMarkers } from "../MapContext"
+import { Accom, SetState, TrailOverview, TrailStage } from "../interfaces"
 import AccomPopup from "./popups/AccomPopup"
 import TrailPopup from "./popups/TrailPopup"
 import TrailstagePopup from "./popups/TrailstagePopup"
 
-const resetMarkers = (setMapMarkers: MapContext["setMapMarkers"]): void => {
+const resetMarkers = (setMapMarkers: SetState<MapMarkers>): void => {
 	setMapMarkers(mapMarkers => {
 		if (mapMarkers)
 			Object.values(mapMarkers).forEach(typeMarkers => {
@@ -20,7 +21,7 @@ const resetMarkers = (setMapMarkers: MapContext["setMapMarkers"]): void => {
 
 const TrailMarker = (
 	trail: TrailOverview,
-	map: MapContext["map"],
+	map: MutableRefObject<Map | null>,
 	navigate: NavigateFunction
 ): Marker => {
 	// let markerIcon = (

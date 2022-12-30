@@ -4,7 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { ThemeProvider } from "styled-components"
 
 import App from "./App"
-import { ContextProvider } from "./MapContext"
+import { MapProvider } from "./MapContext"
 import theme from "./design-system/theme"
 import HomePrelaunch from "./prelaunch/HomePrelaunch"
 import PrivacyPrelaunch from "./prelaunch/PrivacyPrelaunch"
@@ -20,9 +20,9 @@ root.render(
 					<Route
 						path="map/*"
 						element={
-							<ContextProvider>
+							<MapProvider>
 								<App />
-							</ContextProvider>
+							</MapProvider>
 						}
 					/>
 					<Route path="*" element={<Navigate to="/" replace />} />

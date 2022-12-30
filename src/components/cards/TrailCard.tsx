@@ -1,8 +1,8 @@
 import { IconChevronRight } from "@tabler/icons"
-import { useState } from "react"
+import { Map } from "mapbox-gl"
+import { MutableRefObject, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import { MapContext } from "../../MapContext"
 import { Box } from "../../design-system/components"
 import Heading from "../../design-system/components/Heading/Heading"
 import { TrailOverview } from "../../interfaces"
@@ -12,7 +12,7 @@ const TrailCard = ({
 	map,
 }: {
 	trail: TrailOverview
-	map: MapContext["map"]
+	map: MutableRefObject<Map | null>
 }) => {
 	const navigate = useNavigate()
 	const [isHovered, setIsHovered] = useState(false)
