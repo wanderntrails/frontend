@@ -2,17 +2,25 @@
 
 > Pronounced **"vun-dun"** /ˈvandɐn/
 >
-> Co-founded by [Alizeh Khan](https://github.com/alizehkhan) (CPO) and [Seyhan Van Khan](https://github.com/seyhankhan) (CTO). Wandern is an app for hikers to easily find and book mountain huts and campsites on popular trails. This is the MVP.
+> Co-founded by [Alizeh Khan](https://github.com/alizehkhan) and [Seyhan Van Khan](https://github.com/seyhankhan). Wandern is an app for hikers to easily find and book mountain huts and campsites on popular trails. This is the MVP.
 >
-> 👉&nbsp; [_Live demo here_](https://www.wanderntrails.com)
+> 👉&nbsp; [_wanderntrails.com_](https://www.wanderntrails.com)
 
-## Built with
+## Tech Stack
 
-* [Netlify](https://www.netlify.com/) - host site in cloud
-* [React](https://reactjs.org/) - JavaScript library for building user interfaces.
-* [TypeScript](https://www.typescriptlang.org/) - a strongly typed JavaScript
-* [Cloudinary](https://cloudinary.com/) - store images
-* [Google Analytics](https://analytics.google.com/) - track website traffic
+### Frontend
+
+* [**React**](https://reactjs.org) - TypeScript library for building user interfaces.
+* [Netlify](https://www.netlify.com) - host web app
+* [Google Analytics](https://analytics.google.com) - track site traffic
 * [Google Search Console](https://search.google.com/search-console/welcome) - optimise site visibility
-* [Mapbox API](https://docs.mapbox.com/api/overview/) - all map stuff
-* [Tabler Icons](https://tabler-icons.io/) - minimalist and consistent iconography
+* [Mapbox](https://www.mapbox.com) - all map stuff
+* [Tabler Icons](https://tabler-icons.io) - minimalist and consistent iconography
+
+### Backend
+
+* [**Django**](https://www.djangoproject.com) - high-level Python web framework
+* [Fly.io](https://fly.io) - host server and database
+* [Airtable API](https://airtable.com/api) - store data seed
+* [Cloudinary SDK](https://cloudinary.com/documentation/cloudinary_sdks) - store images
+* [Mailchimp Marketing API](https://mailchimp.com/developer/marketing) - emails
