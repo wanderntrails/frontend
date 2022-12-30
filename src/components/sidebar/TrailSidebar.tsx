@@ -24,8 +24,8 @@ const TrailSidebar = () => {
 	// run when first loaded
 	useEffect(() => {
 		fetch(`${BASE_URL}/trail/${trailURL}.json`)
-			.then(({ status, json }: Response) =>
-				status === 404 ? navigate("/map") : json()
+			.then(response =>
+				response.status === 404 ? navigate("/map") : response.json()
 			)
 			.then((json: Trail) => {
 				setTrail(json)
