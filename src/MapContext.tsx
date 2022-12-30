@@ -13,8 +13,7 @@ import {
 
 import { SetState } from "./interfaces"
 
-mapboxgl.accessToken =
-	"pk.eyJ1IjoidmFua2hhbiIsImEiOiJja3k5NHU5aWEwMnpyMnZvY3RsdnBmNnZpIn0.IGWjLj1iDXj0Tn3_MWMNyw"
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 
 export const BASE_URL =
 	process.env.NODE_ENV === "production" ? "https://api.wanderntrails.com" : ""
