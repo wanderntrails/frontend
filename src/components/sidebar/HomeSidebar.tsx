@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Helmet } from "react-helmet-async"
 import { useNavigate } from "react-router-dom"
 
 import { BASE_URL, MAP_CENTER, MIN_ZOOM, useMap } from "../../MapContext"
@@ -32,16 +33,6 @@ const HomeSidebar = () => {
 					trails: json.map((trail: TrailOverview) => trail.marker),
 				})
 
-				document.title = "Wandern | Plan your trail accommodation"
-				const titles: (HTMLElement | null)[] = [
-					document.querySelector("meta[property='og:title']"),
-					document.querySelector("meta[name='twitter:text:title']"),
-				]
-				titles.forEach(
-					title =>
-						title instanceof HTMLMetaElement && (title.content = document.title)
-				)
-
 				map.current.setCenter(MAP_CENTER).setZoom(MIN_ZOOM).resetNorthPitch()
 				json.forEach(({ url }: TrailOverview) => {
 					map.current?.setLayoutProperty(url, "visibility", "none")
@@ -49,8 +40,15 @@ const HomeSidebar = () => {
 			})
 	}, [])
 
+	const title = "Wandern - Plan your trail accommodation"
 	return (
 		<>
+			<Helmet>
+				<title>{title}</title>
+				<meta name="twitter:text:title" content={title} />
+				<meta property="og:title" content={title} />
+			</Helmet>
+
 			<Box p="spacing-sm" bg="neutral.700" position="sticky" top={0}>
 				<Box as="a" height="60px" href="/" sx={{ "> svg": { mx: "auto" } }}>
 					<WandernLogoFull />

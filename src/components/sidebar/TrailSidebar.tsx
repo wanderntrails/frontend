@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
+import { useNavigate, useParams } from "react-router-dom"
 
 import { BASE_URL, MapMarkers, useMap } from "../../MapContext"
 import { Box } from "../../design-system/components"
@@ -13,6 +14,7 @@ import TrailstagesCard from "./trail/TrailstagesCard"
 import TransportCard from "./trail/TransportCard"
 
 const TrailSidebar = () => {
+	const navigate = useNavigate()
 	const params = useParams()
 	const trailURL = (params.trail ?? "").toLowerCase()
 
@@ -22,7 +24,9 @@ const TrailSidebar = () => {
 	// run when first loaded
 	useEffect(() => {
 		fetch(`${BASE_URL}/trail/${trailURL}.json`)
-			.then(response => response.json())
+			.then(({ status, json }: Response) =>
+				status === 404 ? navigate("/map") : json()
+			)
 			.then((json: Trail) => {
 				setTrail(json)
 
@@ -45,20 +49,20 @@ const TrailSidebar = () => {
 					offset: [0, -32],
 				})
 				map.current.setLayoutProperty(trailURL, "visibility", "visible")
-
-				document.title = `${json.name} | Wandern - Trail accommodation`
-				const titles: (HTMLElement | null)[] = [
-					document.querySelector("meta[property='og:title']"),
-					document.querySelector("meta[name='twitter:text:title']"),
-				]
-				titles.forEach(
-					el => el instanceof HTMLMetaElement && (el.content = document.title)
-				)
 			})
 	}, [])
 
+	const title = `${
+		trail?.name ?? "Trail"
+	} | Wandern - Plan your trail accommodation`
+
 	return (
 		<>
+			<Helmet>
+				<title>{title}</title>
+				<meta name="twitter:text:title" content={title} />
+				<meta property="og:title" content={title} />
+			</Helmet>
 			<Box bg="neutral.700" py="spacing-md" position="sticky" top={0}>
 				<BackButton />
 
