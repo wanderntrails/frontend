@@ -44,7 +44,7 @@ const TrailSidebar = () => {
 				)
 				setMapMarkers(trailMarkers)
 
-				map.current.setPitch(45).fitBounds(json.bbox, {
+				map.current.setPitch(35).fitBounds(json.bbox, {
 					padding: { top: 0, bottom: 0, left: 400 + 32, right: 0 },
 					offset: [0, -32],
 				})
@@ -74,7 +74,6 @@ const TrailSidebar = () => {
 				trail.accoms.length
 		  } mountain huts and campsites available. Wandern is an easy way to find and book accommodation on popular hiking trails. See your trail's stages, water sources and resupply points.`
 		: ""
-	console.log({ description })
 	return (
 		<>
 			{trail && (
