@@ -6,6 +6,8 @@
 >
 > 👉&nbsp; [_wanderntrails.com_](https://www.wanderntrails.com)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9db774c-ab69-4070-842e-8b940678af03/deploy-status)](https://app.netlify.com/sites/wandern/deploys)
+
 ## Tech Stack
 
 ### Frontend
