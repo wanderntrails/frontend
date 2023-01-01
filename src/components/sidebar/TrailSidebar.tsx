@@ -52,17 +52,39 @@ const TrailSidebar = () => {
 			})
 	}, [])
 
-	const title = `${
-		trail?.name ?? "Trail"
-	} | Wandern - Plan your trail accommodation`
+	const listCountries = (countries: string[]): string => {
+		if (countries.length === 0) return "Europe"
+		if (countries.length === 1) return countries[0]
+		return [
+			countries.slice(0, -1).join(", "),
+			countries.length > 1 && "and",
+			countries.at(-1),
+		].join(" ")
+	}
 
+	const toKM = (metres: number): string => Math.round(metres / 1000) + " km"
+
+	const title = trail
+		? `${trail.name} | Wandern - Plan your trail accommodation`
+		: ""
+	const description = trail
+		? `The ${trail.name} is a ${toKM(
+				trail.distance
+		  )} hike through ${listCountries(trail.countries)}, with over ${
+				trail.accoms.length
+		  } mountain huts and campsites available. Wandern is an easy way to find and book accommodation on popular hiking trails. See your trail's stages, water sources and resupply points.`
+		: ""
+	console.log({ description })
 	return (
 		<>
-			<Helmet>
-				<title>{title}</title>
-				<meta name="twitter:text:title" content={title} />
-				<meta property="og:title" content={title} />
-			</Helmet>
+			{trail && (
+				<Helmet>
+					<title>{title}</title>
+					<meta name="twitter:text:title" content={title} />
+					<meta property="og:title" content={title} />
+					<meta name="description" content={description} />
+				</Helmet>
+			)}
 			<Box bg="neutral.700" py="spacing-md" position="sticky" top={0}>
 				<BackButton />
 

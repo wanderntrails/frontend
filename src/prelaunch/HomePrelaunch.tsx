@@ -1,5 +1,6 @@
 import { IconArrowNarrowDown } from "@tabler/icons"
 import { useRef } from "react"
+import { Helmet } from "react-helmet-async"
 
 import { Box, Heading, Text } from "../design-system/components"
 import Features from "./Features"
@@ -13,8 +14,17 @@ const HomePrelaunch = () => {
 	const inputRef = useRef<HTMLInputElement | null>(null)
 	const mainRef = useRef<HTMLDivElement | null>(null)
 
+	const title = "Prelaunch | Wandern - Plan your trail accommodation"
+	const description =
+		"An easy way to find and book mountain huts and campsites on popular hiking trails. See your trail's stages, water sources and resupply points."
 	return (
 		<>
+			<Helmet>
+				<title>{title}</title>
+				<meta name="twitter:text:title" content={title} />
+				<meta property="og:title" content={title} />
+				<meta name="description" content={description} />
+			</Helmet>
 			<Box as="header" className="bg-hero" ref={heroRef}>
 				<Box className="container">
 					<Box as="img" src="/images/logo/logo.svg" className="center-logo" />

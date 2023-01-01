@@ -1,9 +1,21 @@
+import { Helmet } from "react-helmet-async"
+
 import { Box, Heading, Text } from "../design-system/components"
 import Footer from "./Footer"
 import "./stylesheets/style.css"
 
+const title = "Privacy Policy | Wandern - Plan your trail accommodation"
+const description =
+	"This privacy policy explains how we collect and process your personal data when you use the services provided on wanderntrails.com."
+
 const PrivacyPrelaunch = () => (
 	<>
+		<Helmet>
+			<title>{title}</title>
+			<meta name="twitter:text:title" content={title} />
+			<meta property="og:title" content={title} />
+			<meta name="description" content={description} />
+		</Helmet>
 		<div className="container">
 			<a href="/">
 				<img src="/images/logo/logo-dark.svg" className="center-logo" />

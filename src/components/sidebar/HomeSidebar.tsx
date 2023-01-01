@@ -40,13 +40,16 @@ const HomeSidebar = () => {
 			})
 	}, [])
 
-	const title = "Wandern - Plan your trail accommodation"
+	const title = "Trails | Wandern - Plan your trail accommodation"
+	const description =
+		"An easy way to find and book mountain huts and campsites on popular hiking trails. See your trail's stages, water sources and resupply points."
 	return (
 		<>
 			<Helmet>
 				<title>{title}</title>
 				<meta name="twitter:text:title" content={title} />
 				<meta property="og:title" content={title} />
+				<meta name="description" content={description} />
 			</Helmet>
 
 			<Box p="spacing-sm" bg="neutral.700" position="sticky" top={0}>
