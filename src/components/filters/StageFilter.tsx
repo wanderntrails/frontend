@@ -15,7 +15,7 @@ const StageFilter = ({ numStages, toggleDisplay }: FilterProps) => {
 			bg={isHidden ? "neutral.100" : "white"}
 			sx={{ ":hover": { bg: "neutral.100" } }}
 			color={isHidden ? "neutral.400" : "neutral.700"}
-			borderRadius="border-radius-pill"
+			borderRadius="border-radius-md"
 			py="spacing-xxs"
 			px="spacing-xs"
 			//@ts-ignore

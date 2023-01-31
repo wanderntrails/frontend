@@ -21,7 +21,7 @@ const MapFilters = () => {
 		<Box
 			position="absolute"
 			top="16px"
-			right="8px"
+			right="24px"
 			zIndex={3}
 			display="flex"
 			gap="spacing-xs"

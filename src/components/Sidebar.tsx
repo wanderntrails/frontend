@@ -13,7 +13,10 @@ const Sidebar = ({
 	toggleSidebar: () => void
 }) => {
 	return (
-		<Box className={`sidebar ${isExpanded ? "expand" : "collapse"}`}>
+		<Box
+			className={`sidebar ${isExpanded ? "expand" : "collapse"}`}
+			display={["none", "block"]}
+		>
 			<Box
 				as="button"
 				border="none"
@@ -36,7 +39,11 @@ const Sidebar = ({
 				onClick={toggleSidebar}
 				title={`${isExpanded ? "Expand" : "Collapse"} side panel`}
 			>
-				{isExpanded ? <IconChevronLeft /> : <IconChevronRight />}
+				{isExpanded ? (
+					<IconChevronLeft size={20} />
+				) : (
+					<IconChevronRight size={20} />
+				)}
 			</Box>
 			<Box height="100vh" overflow="scroll">
 				<Routes>
