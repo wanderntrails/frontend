@@ -1,4 +1,5 @@
 import { IconMinus, IconPlus } from "@tabler/icons"
+import { useState } from "react"
 
 import { useMap } from "../MapContext"
 import { Box } from "../design-system/components"
@@ -6,11 +7,17 @@ import theme from "../design-system/theme"
 
 const MapZooms = () => {
 	const { map } = useMap()
+	const [buttonText, setButtonText] = useState("3D")
+
+	map.current?.on("pitchend", () => {
+		setButtonText(map.current?.getPitch() > 10 ? "2D" : "3D")
+	})
 
 	return (
-		<Box zIndex={2} position="absolute" bottom="48px" right="24px">
+		<Box zIndex={2} position="absolute" bottom="24px" right="24px">
 			<Box
 				as="button"
+				title="Tilt the view"
 				border="none"
 				fontWeight="font-weight-bold"
 				bg="white"
@@ -25,8 +32,11 @@ const MapZooms = () => {
 				color="neutral.700"
 				// @ts-ignore
 				boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
+				onClick={() =>
+					map.current?.easeTo({ pitch: map.current?.getPitch() > 10 ? 0 : 45 })
+				}
 			>
-				3D
+				{buttonText}
 			</Box>
 			<Box
 				// @ts-ignore

@@ -25,6 +25,8 @@ const MapFilters = () => {
 			zIndex={3}
 			display="flex"
 			gap="spacing-xs"
+			flexDirection={["column", "row"]}
+			alignItems={["flex-end", "unset"]}
 		>
 			<CampsiteFilter {...{ toggleDisplay }} />
 			<HutFilter {...{ toggleDisplay }} />

@@ -38,7 +38,7 @@ const StageFilter = ({ numStages, toggleDisplay }: FilterProps) => {
 				fontWeight="font-weight-bold"
 				backgroundColor={isHidden ? "neutral.400" : "neutral.700"}
 			>
-				{numStages}
+				{numStages ? numStages - 1 : 0}
 			</Box>
 			<Text
 				bold

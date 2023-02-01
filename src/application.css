@@ -59,11 +59,12 @@ a.mapboxgl-ctrl-logo {
 }
 
 .mapboxgl-ctrl.mapboxgl-ctrl-group {
-	margin: 0 14px 128px 0;
+	margin: 0 14px 104px 0;
 }
 
 .mapboxgl-ctrl-attrib.mapboxgl-compact {
 	margin: 0 24px 8px 0 !important;
+	visibility: hidden;
 }
 
 .mapbox-improve-map {

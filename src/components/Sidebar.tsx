@@ -45,7 +45,7 @@ const Sidebar = ({
 					<IconChevronRight size={20} />
 				)}
 			</Box>
-			<Box height="100vh" overflow="scroll">
+			<Box height="100vh" overflowY="scroll">
 				<Routes>
 					<Route index element={<HomeSidebar />} />
 					<Route path=":trail" element={<TrailSidebar />} />
