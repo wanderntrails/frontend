@@ -18,11 +18,11 @@ export default () => {
 	return (
 		<>
 			<div id="map" ref={mapContainer} />
-			<Coordinates />
+			{process.env.NODE_ENV !== "production" && <Coordinates />}
 			{trailMatch && <MapFilters />}
 			<MapZooms />
 
-			<Sidebar // TODO: ts
+			<Sidebar
 				isExpanded={isSidebarExpanded}
 				toggleSidebar={() => setIsSidebarExpanded(isExpanded => !isExpanded)}
 			/>

@@ -1,3 +1,4 @@
+import { props } from "@styled-system/should-forward-prop"
 import styled from "styled-components"
 import {
 	background,
@@ -30,7 +31,10 @@ const SystemStyleProps = compose(
 	typography
 )
 
-const Box = styled.div<ThemedStyleProps & SxProps>(
+const Box = styled.div.withConfig({
+	shouldForwardProp: (prop, defaultValidatorFn) =>
+		!props.includes(prop) && defaultValidatorFn(prop),
+})<ThemedStyleProps & SxProps>(
 	SystemStyleProps,
 	sx,
 	system({
@@ -38,6 +42,9 @@ const Box = styled.div<ThemedStyleProps & SxProps>(
 		textDecoration: true,
 		objectFit: true,
 		pointerEvents: true,
+		textTransform: true,
+		transform: true,
+		listStyle: true,
 		gap: {
 			property: "gap",
 			scale: "space",

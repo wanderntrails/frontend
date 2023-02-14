@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@styled-system/css": "^5.1.5",
+    "@styled-system/should-forward-prop": "^5.1.5",
     "@tabler/icons": "^1.118.0",
     "@types/js-cookie": "^3.0.2",
     "@types/mapbox-gl": "^2.7.10",
@@ -34,6 +35,7 @@
     "@types/styled-components": "^5.1.26",
     "@types/styled-system": "^5.1.15",
     "@types/styled-system__css": "^5.0.17",
+    "@types/styled-system__should-forward-prop": "^5.1.2",
     "js-cookie": "^3.0.1",
     "mapbox-gl": "^2.11.1",
     "react": "^18.2.0",
