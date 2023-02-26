@@ -75,7 +75,12 @@ const TrailSidebar = () => {
 		  } mountain huts and campsites available. Wandern is an easy way to find and book accommodation on popular hiking trails. See your trail's stages, water sources and resupply points.`
 		: ""
 	return (
-		<>
+		<Box
+			height="100vh"
+			overflowY="auto"
+			boxShadow="shadow-map-controls"
+			bg="white"
+		>
 			{trail && (
 				<Helmet>
 					<title>{title}</title>
@@ -118,7 +123,7 @@ const TrailSidebar = () => {
 				transport_from={trail?.transport_from}
 			/>
 			<TrailstagesCard stages={trail?.stages} />
-		</>
+		</Box>
 	)
 }
 

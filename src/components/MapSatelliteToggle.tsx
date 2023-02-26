@@ -58,8 +58,7 @@ const MapSatelliteToggle = () => {
 			justifyContent="center"
 			cursor="pointer"
 			pointerEvents="auto"
-			//@ts-ignore
-			boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
+			boxShadow="shadow-map-controls"
 			onClick={toggleMapSatellite}
 			sx={{
 				backgroundImage: `

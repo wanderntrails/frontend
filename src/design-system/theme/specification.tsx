@@ -36,7 +36,7 @@ export type Space = `spacing-${
 	| "xl"
 	| "xxl"}`
 
-export type Shadow = `shadow-${"sm" | "md" | "lg" | "xl"}`
+export type Shadow = `shadow-${"sm" | "md" | "lg" | "xl" | "map-controls"}`
 
 export type BorderRadius = `border-radius-${
 	| "sm"

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async"
 import { useNavigate } from "react-router-dom"
 
 import { BASE_URL, MAP_CENTER, MIN_ZOOM, useMap } from "../../MapContext"
-import { Box } from "../../design-system/components"
+import { Box, Text } from "../../design-system/components"
 import { TrailOverview } from "../../interfaces"
 import { TrailMarker, resetMarkers } from "../MapMarker"
 import TrailCard from "../cards/TrailCard"
@@ -51,18 +51,32 @@ const HomeSidebar = () => {
 				<meta property="og:title" content={title} />
 				<meta name="description" content={description} />
 			</Helmet>
-
-			<Box p="spacing-sm" bg="neutral.700" position="sticky" top={0}>
-				<Box as="a" height="60px" href="/" sx={{ "> svg": { mx: "auto" } }}>
-					<WandernLogoFull />
+			<Box display="flex" flexDirection="column" height="100vh">
+				<Box
+					m="spacing-sm"
+					bg="neutral.700"
+					position="sticky"
+					p="spacing-sm"
+					top={0}
+					borderRadius="border-radius-md"
+					boxShadow="shadow-md"
+				>
+					<Box as="a" height="60px" href="/" sx={{ "> svg": { mx: "auto" } }}>
+						<WandernLogoFull />
+					</Box>
+					<Text color="white" textAlign="center" bold>
+						Pick a trail to plan your accommodation
+					</Text>
+				</Box>
+				<Box flex={1} overflowY="auto" px="spacing-md">
+					{trails?.map(trail => (
+						<TrailCard key={trail.url} trail={trail} map={map} />
+					)) ??
+						Array.from({ length: 10 }, (_, i) => (
+							<Box key={i} height="100px" bg="neutral.200" m="spacing-xs" />
+						))}
 				</Box>
 			</Box>
-			{trails?.map(trail => (
-				<TrailCard key={trail.url} trail={trail} map={map} />
-			)) ??
-				Array.from({ length: 10 }, (_, i) => (
-					<Box key={i} height="100px" bg="neutral.200" m="spacing-xs" />
-				))}
 		</>
 	)
 }

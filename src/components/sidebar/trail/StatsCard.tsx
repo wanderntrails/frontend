@@ -6,7 +6,7 @@ import StatCard from "./StatCard"
 
 const StatsCard = ({ trail }: { trail: Trail | null }) =>
 	trail ? (
-		<Box bg="neutral.200" p="spacing-md">
+		<Box bg="neutral.100" p="spacing-md">
 			<Box display="flex">
 				<StatCard
 					Icon={IconRuler}

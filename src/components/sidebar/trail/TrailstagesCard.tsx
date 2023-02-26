@@ -11,7 +11,7 @@ import { TrailStage } from "../../../interfaces"
 
 const TrailstagesCard = ({ stages }: { stages?: TrailStage[] }) =>
 	stages ? (
-		<Box p="spacing-lg" bg="white">
+		<Box p="spacing-lg" bg="neutral.100">
 			<IconDirections color={theme.colors.neutral[600]} />
 			<Heading as="h2" color="neutral.500" my="spacing-xxs" size="md">
 				{stages.length - 1} Trail Stages

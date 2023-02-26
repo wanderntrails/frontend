@@ -30,8 +30,7 @@ const MapZooms = () => {
 				cursor="pointer"
 				sx={{ ":hover": { bg: "neutral.100" } }}
 				color="neutral.700"
-				// @ts-ignore
-				boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
+				boxShadow="shadow-map-controls"
 				onClick={() =>
 					map.current?.easeTo({ pitch: map.current?.getPitch() > 10 ? 0 : 45 })
 				}
@@ -39,8 +38,7 @@ const MapZooms = () => {
 				{buttonText}
 			</Box>
 			<Box
-				// @ts-ignore
-				boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
+				boxShadow="shadow-map-controls"
 				overflow="hidden"
 				display="flex"
 				flexDirection="column"

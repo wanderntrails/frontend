@@ -36,21 +36,22 @@ const TrailCard = ({
 			as="button"
 			border="none"
 			display="flex"
-			width={1}
 			textAlign="left"
-			borderTopStyle="solid"
-			borderTopWidth="1px"
-			backgroundColor={isHovered ? "neutral.200" : "neutral.100"}
-			borderColor="neutral.300"
+			width={1}
+			backgroundColor={isHovered ? "neutral.100" : "white"}
 			cursor="pointer"
 			p="spacing-xs"
+			mb="spacing-sm"
+			borderRadius="border-radius-md"
+			boxShadow="shadow-md"
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
 			onClick={() => navigate(`/map/${trail.url}`)}
+			sx={{ ":hover": { transform: "scale(1.02)" } }}
 		>
 			<Box
 				as="img"
-				width="140px"
+				width="136px"
 				height="100px"
 				borderRadius="border-radius-md"
 				src={trail.image}

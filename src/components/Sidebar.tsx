@@ -20,7 +20,6 @@ const Sidebar = ({
 			<Box
 				as="button"
 				border="none"
-				bg="neutral.100"
 				sx={{ ":hover": { bg: "neutral.200" } }}
 				py="spacing-md"
 				px={0}
@@ -34,8 +33,7 @@ const Sidebar = ({
 				borderBottomRightRadius="border-radius-sm"
 				borderTopRightRadius="border-radius-sm"
 				cursor="pointer"
-				//@ts-ignore
-				boxShadow="0 1px 2px rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
+				boxShadow="shadow-map-controls"
 				onClick={toggleSidebar}
 				title={`${isExpanded ? "Expand" : "Collapse"} side panel`}
 			>
@@ -45,7 +43,7 @@ const Sidebar = ({
 					<IconChevronRight size={20} />
 				)}
 			</Box>
-			<Box height="100vh" overflowY="scroll">
+			<Box maxHeight="100vh">
 				<Routes>
 					<Route index element={<HomeSidebar />} />
 					<Route path=":trail" element={<TrailSidebar />} />
