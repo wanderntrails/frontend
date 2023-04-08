@@ -72,8 +72,16 @@ const HomeSidebar = () => {
 					{trails?.map(trail => (
 						<TrailCard key={trail.url} trail={trail} map={map} />
 					)) ??
-						Array.from({ length: 10 }, (_, i) => (
-							<Box key={i} height="100px" bg="neutral.200" m="spacing-xs" />
+						Array.from({ length: 6 }, (_, i) => (
+							<Box
+								key={i}
+								height="100px"
+								bg="neutral.200"
+								p="spacing-xs"
+								mb="spacing-sm"
+								borderRadius="border-radius-md"
+								boxShadow="shadow-md"
+							/>
 						))}
 				</Box>
 			</Box>

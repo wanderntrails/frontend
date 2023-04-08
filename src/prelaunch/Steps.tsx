@@ -1,26 +1,6 @@
-import { MutableRefObject } from "react"
-
 import { Box, Heading, Text } from "../design-system/components"
 
-const Steps = ({
-	heroRef,
-	inputRef,
-}: {
-	heroRef: MutableRefObject<HTMLDivElement | null>
-	inputRef: MutableRefObject<HTMLInputElement | null>
-}) => {
-	const RequestAccess = () => (
-		<button
-			className="request-access"
-			onClick={() => {
-				heroRef.current?.scrollIntoView({ block: "start", behavior: "smooth" })
-				setTimeout(() => inputRef.current?.focus(), 900)
-			}}
-		>
-			Request access
-		</button>
-	)
-
+const Steps = () => {
 	return (
 		<>
 			<Box as="section" className="bg-gray">
@@ -35,7 +15,9 @@ const Steps = ({
 								Explore mountain huts and campsites along on your trail. See the
 								trail's stages, water sources, and resupply points.
 							</Text>
-							<RequestAccess />
+							<a href="/map" className="primary-btn">
+								Go to map
+							</a>
 						</Box>
 					</Box>
 					<Box className="step-1-image">
@@ -63,7 +45,9 @@ const Steps = ({
 								Check availability and add the campsite or hut you'd like to
 								stay at to your itinerary. See your trip unfold on the map.
 							</Text>
-							<RequestAccess />
+							<a href="/map" className="primary-btn">
+								Go to map
+							</a>
 						</Box>
 					</Box>
 				</Box>
@@ -81,7 +65,9 @@ const Steps = ({
 								Book and pay for all the accommodation in your itinerary in one
 								go without leaving the site.
 							</Text>
-							<RequestAccess />
+							<a href="/map" className="primary-btn">
+								Go to map
+							</a>
 						</Box>
 					</Box>
 					<img
