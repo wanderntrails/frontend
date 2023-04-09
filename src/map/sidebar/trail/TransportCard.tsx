@@ -2,7 +2,7 @@ import { IconBus } from "@tabler/icons"
 import { Fragment } from "react"
 import ReactMarkdown from "react-markdown"
 
-import { Box, Heading, Text } from "../../../design-system/components/"
+import { Box, Heading, Text } from "../../../design-system/components"
 
 const TransportCard = ({
 	transport_to,

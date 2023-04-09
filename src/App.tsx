@@ -3,12 +3,12 @@ import { useMatch } from "react-router-dom"
 
 import { useMap } from "./MapContext"
 import "./application.css"
-import Coordinates from "./components/Coordinates"
-import MapFilters from "./components/MapFilters"
-import MapSatelliteToggle from "./components/MapSatelliteToggle"
-import MapZooms from "./components/MapZooms"
-import Sidebar from "./components/Sidebar"
-import WandernLogo from "./components/icons/WandernLogo"
+import Coordinates from "./map/Coordinates"
+import MapFilters from "./map/MapFilters"
+import MapSatelliteToggle from "./map/MapSatelliteToggle"
+import MapZooms from "./map/MapZooms"
+import Sidebar from "./map/Sidebar"
+import WandernLogo from "./map/icons/WandernLogo"
 
 export default () => {
 	const { mapContainer } = useMap()
