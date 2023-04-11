@@ -2,7 +2,7 @@ import { IconArrowNarrowDown } from "@tabler/icons"
 import { useRef } from "react"
 import { Helmet } from "react-helmet-async"
 
-import { Box, Heading, Text } from "../design-system/components"
+import { Box, Button, Heading, Text } from "../design-system/components"
 import Features from "./Features"
 import Footer from "./Footer"
 import Steps from "./Steps"
@@ -33,9 +33,9 @@ const HomePrelaunch = () => {
 						hiking trails.
 					</Text>
 					<Box textAlign="center">
-						<a href="/map" className="primary-btn">
+						<Button as="a" href="/map">
 							Go to map
-						</a>
+						</Button>
 					</Box>
 					<IconArrowNarrowDown
 						size={40}

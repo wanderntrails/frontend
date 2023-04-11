@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "../design-system/components"
+import { Box, Button, Heading, Text } from "../design-system/components"
 
 const Steps = () => {
 	return (
@@ -15,9 +15,11 @@ const Steps = () => {
 								Explore mountain huts and campsites along on your trail. See the
 								trail's stages, water sources, and resupply points.
 							</Text>
-							<a href="/map" className="primary-btn">
-								Go to map
-							</a>
+							<Box mt="spacing-md">
+								<Button as="a" href="/map">
+									Go to map
+								</Button>
+							</Box>
 						</Box>
 					</Box>
 					<Box className="step-1-image">
@@ -45,9 +47,11 @@ const Steps = () => {
 								Check availability and add the campsite or hut you'd like to
 								stay at to your itinerary. See your trip unfold on the map.
 							</Text>
-							<a href="/map" className="primary-btn">
-								Go to map
-							</a>
+							<Box mt="spacing-md">
+								<Button as="a" href="/map">
+									Go to map
+								</Button>
+							</Box>
 						</Box>
 					</Box>
 				</Box>
@@ -65,9 +69,11 @@ const Steps = () => {
 								Book and pay for all the accommodation in your itinerary in one
 								go without leaving the site.
 							</Text>
-							<a href="/map" className="primary-btn">
-								Go to map
-							</a>
+							<Box mt="spacing-md">
+								<Button as="a" href="/map">
+									Go to map
+								</Button>
+							</Box>
 						</Box>
 					</Box>
 					<img

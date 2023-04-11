@@ -42,7 +42,6 @@ const Box = styled.div.withConfig({
 		textDecoration: true,
 		objectFit: true,
 		pointerEvents: true,
-		textTransform: true,
 		transform: true,
 		listStyle: true,
 		gap: {
