@@ -23,7 +23,7 @@ type HeadingProps = {
 
 const Heading = forwardRef(
 	(props: HeadingProps, ref?: Ref<HTMLHeadingElement>) => {
-		const { as, size = "xl", color = "neutral.700", ...restProps } = props
+		const { as, size = "xl", color = "neutral.800", ...restProps } = props
 
 		return (
 			<Box

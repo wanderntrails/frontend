@@ -7,12 +7,19 @@ import {
 } from "react"
 
 import Box from "../Box/Box"
-import { Size, Variant, sizeStyles, variantStyles } from "./styles"
+import {
+	Size,
+	Variant,
+	disabledStyle,
+	sizeStyles,
+	variantStyles,
+} from "./styles"
 
 type ButtonProps = {
 	children: ReactNode
 	variant?: Variant
 	size?: Size
+	fullWidth?: boolean
 } & (
 	| ({ as: "a" } & Omit<
 			ComponentPropsWithoutRef<"a">,
@@ -26,17 +33,27 @@ type ButtonProps = {
 
 const Button = forwardRef(
 	(props: ButtonProps, ref?: Ref<HTMLAnchorElement | HTMLButtonElement>) => {
-		const { variant = "primary", size = "medium", ...restProps } = props
+		const {
+			variant = "primary",
+			size = "medium",
+			fullWidth,
+			...restProps
+		} = props
 
 		return (
 			<Box
 				fontSize="font-size-4"
-				fontWeight="font-weight-bold"
 				border="none"
-				display="inline-block"
-				borderRadius="border-radius-md"
+				width={fullWidth ? 1 : "fit-content"}
+				borderRadius="border-radius-sm"
 				cursor="pointer"
-				sx={{ ...variantStyles[variant], ...sizeStyles[size] }}
+				display="inline-block"
+				textAlign="center"
+				sx={{
+					...variantStyles[variant],
+					...sizeStyles[size],
+					...disabledStyle,
+				}}
 				{...restProps}
 				ref={ref as any}
 			/>

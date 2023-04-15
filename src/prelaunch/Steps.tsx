@@ -16,8 +16,8 @@ const Steps = () => {
 								trail's stages, water sources, and resupply points.
 							</Text>
 							<Box mt="spacing-md">
-								<Button as="a" href="/map">
-									Go to map
+								<Button size="small" as="a" href="/map" variant="secondary">
+									Try it now
 								</Button>
 							</Box>
 						</Box>
@@ -32,7 +32,7 @@ const Steps = () => {
 			</Box>
 
 			<Box as="section" className="bg-white">
-				<Box className="container wrapper-step">
+				<Box className="container wrapper-step" alignItems="center">
 					<img
 						src="/images/step/2.svg"
 						alt="Preview of adding an accommodation to your itinerary and checking availability"
@@ -48,8 +48,8 @@ const Steps = () => {
 								stay at to your itinerary. See your trip unfold on the map.
 							</Text>
 							<Box mt="spacing-md">
-								<Button as="a" href="/map">
-									Go to map
+								<Button as="a" href="/map" size="small" variant="secondary">
+									Try it now
 								</Button>
 							</Box>
 						</Box>
@@ -58,7 +58,7 @@ const Steps = () => {
 			</Box>
 
 			<Box as="section" className="bg-gray">
-				<Box className="container wrapper-step">
+				<Box className="container wrapper-step" alignItems="center">
 					<Box className="text">
 						<Text fontFamily="font-family-serif" className="number">
 							3
@@ -70,8 +70,8 @@ const Steps = () => {
 								go without leaving the site.
 							</Text>
 							<Box mt="spacing-md">
-								<Button as="a" href="/map">
-									Go to map
+								<Button as="a" href="/map" size="small" variant="secondary">
+									Try it now
 								</Button>
 							</Box>
 						</Box>

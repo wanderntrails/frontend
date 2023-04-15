@@ -9,7 +9,7 @@ export type ThemeSpecification = {
 	radii: Record<BorderRadius, string | number>
 }
 
-type ColorFamily = "neutral" | "primary" | "green" | "yellow" | "red" | "blue"
+type ColorFamily = "neutral" | "orange" | "green" | "yellow" | "red" | "blue"
 
 type ColorScale = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800
 
@@ -21,7 +21,7 @@ export type Color =
 
 export type FontFamily = `font-family-${"sans-serif" | "serif"}`
 
-export type FontSize = `font-size-${1 | 2 | 3 | 4 | 5 | 6 | 7}`
+export type FontSize = `font-size-${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8}`
 
 export type FontWeight = `font-weight-${"normal" | "bold"}`
 

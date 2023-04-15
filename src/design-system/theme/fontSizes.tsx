@@ -8,6 +8,7 @@ const fontSizes: ThemeSpecification["fontSizes"] = {
 	"font-size-5": "20px",
 	"font-size-6": "24px",
 	"font-size-7": "32px",
+	"font-size-8": "40px",
 }
 
 export default fontSizes

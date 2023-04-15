@@ -22,7 +22,13 @@ const HomePrelaunch = () => {
 				<meta property="og:title" content={title} />
 				<meta name="description" content={description} />
 			</Helmet>
-			<Box as="header" className="bg-hero">
+			<Box
+				as="header"
+				className="bg-hero"
+				min-height="720px"
+				height="100vh"
+				display="flex"
+			>
 				<Box className="container">
 					<Box as="img" src="/images/logo/logo.svg" className="center-logo" />
 					<Heading as="h1" className="tagline">

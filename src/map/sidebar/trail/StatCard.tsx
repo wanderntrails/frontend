@@ -12,7 +12,7 @@ const StatCard = ({
 	title: string
 }) => (
 	<Box flex={1}>
-		<Box color="primary.700" width="fit-content" mx="auto">
+		<Box color="orange.700" width="fit-content" mx="auto">
 			<Icon />
 		</Box>
 		<Box

@@ -11,7 +11,7 @@ const colors: ThemeSpecification["colors"] = {
 		"700": "#334155",
 		"800": "#1E293B",
 	},
-	primary: {
+	orange: {
 		"100": "#FFEDD5",
 		"200": "#FED7AA",
 		"300": "#FDBA74",

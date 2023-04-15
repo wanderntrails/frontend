@@ -1,9 +1,3 @@
-header {
-	min-height: 720px;
-	height: 100vh;
-	display: flex;
-}
-
 .center-logo {
 	padding-top: 56px;
 	display: block;

@@ -14,14 +14,7 @@ const TransportCard = ({
 	transport_to &&
 	transport_from &&
 	(transport_to !== "\n" || transport_from !== "\n") ? (
-		<Box
-			m="spacing-lg"
-			sx={{
-				a: {
-					color: "primary.700",
-				},
-			}}
-		>
+		<Box m="spacing-lg" sx={{ a: { color: "orange.700" } }}>
 			<Box color="neutral.600">
 				<IconBus />
 			</Box>
