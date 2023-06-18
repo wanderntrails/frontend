@@ -15,7 +15,11 @@ const Steps = () => {
 								Explore mountain huts and campsites along on your trail. See the
 								trail's stages, water sources, and resupply points.
 							</Text>
-							<Box mt="spacing-md">
+							<Box
+								mt="spacing-md"
+								display="flex"
+								justifyContent={["center", "start", "start"]}
+							>
 								<Button size="small" as="a" href="/map" variant="secondary">
 									Try it now
 								</Button>
@@ -47,7 +51,11 @@ const Steps = () => {
 								Check availability and add the campsite or hut you'd like to
 								stay at to your itinerary. See your trip unfold on the map.
 							</Text>
-							<Box mt="spacing-md">
+							<Box
+								mt="spacing-md"
+								display="flex"
+								justifyContent={["center", "start", "start"]}
+							>
 								<Button as="a" href="/map" size="small" variant="secondary">
 									Try it now
 								</Button>
@@ -69,7 +77,11 @@ const Steps = () => {
 								Book and pay for all the accommodation in your itinerary in one
 								go without leaving the site.
 							</Text>
-							<Box mt="spacing-md">
+							<Box
+								mt="spacing-md"
+								display="flex"
+								justifyContent={["center", "start", "start"]}
+							>
 								<Button as="a" href="/map" size="small" variant="secondary">
 									Try it now
 								</Button>

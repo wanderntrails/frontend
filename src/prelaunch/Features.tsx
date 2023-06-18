@@ -4,7 +4,7 @@ import { Box, Heading } from "../design-system/components"
 
 const Features = () => {
 	return (
-		<section className="bg-dark">
+		<Box as="section" bg="neutral.800">
 			<div className="container">
 				<div className="features">
 					<div className="feature">
@@ -45,7 +45,7 @@ const Features = () => {
 					</div>
 				</div>
 			</div>
-		</section>
+		</Box>
 	)
 }
 

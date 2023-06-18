@@ -38,7 +38,7 @@ const HomePrelaunch = () => {
 						An easy way to find and book mountain huts and campsites on popular
 						hiking trails.
 					</Text>
-					<Box textAlign="center">
+					<Box mx="auto" width="fit-content">
 						<Button as="a" href="/map">
 							Go to map
 						</Button>

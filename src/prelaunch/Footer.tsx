@@ -1,5 +1,7 @@
+import { Box } from "../design-system/components"
+
 const Footer = () => (
-	<footer className="bg-dark">
+	<Box as="footer" bg="neutral.800">
 		<div className="team">
 			<a href="https://www.linkedin.com/in/seyhankhan/" className="member">
 				<img src="/images/seyhan.png" alt="Seyhan Khan" className="avatar" />
@@ -21,6 +23,6 @@ const Footer = () => (
 		</a>
 		<a href="/privacy">Privacy Policy</a>
 		{/* <address>hello@wanderntrails.com</address> */}
-	</footer>
+	</Box>
 )
 export default Footer

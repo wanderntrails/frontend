@@ -17,8 +17,8 @@ const PrivacyPrelaunch = () => (
 			<meta name="description" content={description} />
 		</Helmet>
 		<div className="container">
-			<a href="/">
-				<img src="/images/logo/logo-dark.svg" className="center-logo" />
+			<a href="/" aria-label="home">
+				<img alt="" src="/images/logo/logo-dark.svg" className="center-logo" />
 			</a>
 			<Box className="privacy">
 				<Heading size="xxl">Privacy Policy</Heading>
