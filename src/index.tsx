@@ -7,7 +7,7 @@ import { ThemeProvider } from "styled-components"
 import App from "./App"
 import { MapProvider } from "./MapContext"
 import theme from "./design-system/theme"
-import Onboard from "./onboard/Onboard"
+import Form from "./onboard/Form"
 import HomePrelaunch from "./prelaunch/HomePrelaunch"
 import PrivacyPrelaunch from "./prelaunch/PrivacyPrelaunch"
 
@@ -20,7 +20,7 @@ root.render(
 					<Routes>
 						<Route index element={<HomePrelaunch />} />
 						<Route path="privacy" element={<PrivacyPrelaunch />} />
-						<Route path="onboard" element={<Onboard />} />
+						<Route path="onboard" element={<Form />} />
 						<Route
 							path="map/*"
 							element={
