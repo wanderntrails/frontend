@@ -11,7 +11,7 @@ const CampingRulesCard = ({ description }: { description?: string }) =>
 				<IconTree />
 			</Box>
 			<Heading as="h2" color="neutral.500" my="spacing-xxs" size="md">
-				Wild Camping Rules
+				Camping rules
 			</Heading>
 			<Text>
 				<ReactMarkdown components={{ p: Fragment }}>

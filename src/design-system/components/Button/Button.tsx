@@ -32,7 +32,7 @@ type ButtonProps = {
 )
 
 const Button = forwardRef(
-	(props: ButtonProps, ref?: Ref<HTMLAnchorElement | HTMLButtonElement>) => {
+	(props: ButtonProps, ref?: Ref<HTMLAnchorElement & HTMLButtonElement>) => {
 		const {
 			variant = "primary",
 			size = "medium",
@@ -47,15 +47,16 @@ const Button = forwardRef(
 				width={fullWidth ? 1 : "fit-content"}
 				borderRadius="border-radius-sm"
 				cursor="pointer"
-				display="inline-block"
-				textAlign="center"
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
 				sx={{
 					...variantStyles[variant],
 					...sizeStyles[size],
 					...disabledStyle,
 				}}
 				{...restProps}
-				ref={ref as any}
+				ref={ref}
 			/>
 		)
 	}
