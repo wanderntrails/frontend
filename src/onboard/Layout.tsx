@@ -1,46 +1,43 @@
 import { IconChevronLeft } from "@tabler/icons"
 import { ReactNode } from "react"
+import { Link } from "react-router-dom"
 
 import { Button } from "../design-system/components"
-import WandernLogoFull from "../map/icons/WandernLogoFull"
+import WandernBlue from "../map/icons/WandernBlue"
 
-const Form = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
 	return (
 		<>
-			<div>
-				<header className="bg-gray-700 text-white py-8">
-					<div className="max-w-[900px] mx-auto items-center">
-						<div className="absolute top-3">
-							<WandernLogoFull />
-						</div>
-						<p className="font-serif text-center text-lg">
-							Onboard your rifugio
-						</p>
-					</div>
-				</header>
-				<div className="flex w-full gap-2 mb-12">
-					{Array.from({ length: 8 }, (_, i) => (
-						<div key={i} className="bg-gray-200 h-2 flex-1" />
-					))}
-				</div>
+			<header className="bg-white text-white py-6 md:px-12 px-6">
+				<Link to="/">
+					<WandernBlue />
+				</Link>
+			</header>
 
-				<div className="mt-6 max-w-sm md:mx-auto mx-6">
-					<button className="flex underline text-gray-700 text-lg items-center">
-						<IconChevronLeft />
-						Back
-					</button>
-					<main className="mt-12">
-						<form>
-							{children}
-							<Button as="button" type="submit" size="small">
-								Continue
-							</Button>
-						</form>
-					</main>
+			<form className="mt-12">
+				<div className="max-w-md md:mx-auto mx-6">
+					{children}
+					<div className="mt-10"></div>
 				</div>
-			</div>
+				<div className="fixed bottom-0 w-full bg-white">
+					<div className="flex gap-2">
+						{Array.from({ length: 8 }, (_, i) => (
+							<div key={i} className="bg-gray-300 h-2 flex-1" />
+						))}
+					</div>
+					<div className="flex justify-between items-center py-5 md:px-12 px-6">
+						<button className="flex underline text-gray-700 text-lg items-center">
+							<IconChevronLeft />
+							Back
+						</button>
+						<Button as="button" type="submit" size="small">
+							Continue
+						</Button>
+					</div>
+				</div>
+			</form>
 		</>
 	)
 }
 
-export default Form
+export default Layout

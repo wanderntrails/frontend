@@ -1,6 +1,6 @@
-import Heading from "./Heading"
+import { ComponentProps } from "react"
 
-// Mapping between heading size, HTML elements, and actual font size
+import Heading from "./Heading"
 
 const sizeMap = {
 	xxl: {
@@ -25,10 +25,8 @@ const sizeMap = {
 	},
 } as const
 
-// Generate heading style and default HTML element (from h1 to h4) based on provided size
-
 type SizeOptions = {
-	size: NonNullable<React.ComponentProps<typeof Heading>["size"]>
+	size: NonNullable<ComponentProps<typeof Heading>["size"]>
 }
 
 export const sizeToFontSize = ({ size }: SizeOptions) => sizeMap[size].fontSize
