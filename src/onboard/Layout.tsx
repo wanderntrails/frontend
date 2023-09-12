@@ -15,7 +15,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 			</header>
 
 			<form className="mt-12">
-				<div className="max-w-md md:mx-auto mx-6">
+				<div className="max-w-lg md:mx-auto mx-6">
 					{children}
 					<div className="mt-10"></div>
 				</div>
@@ -26,7 +26,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 						))}
 					</div>
 					<div className="flex justify-between items-center py-5 md:px-12 px-6">
-						<button className="flex underline text-gray-700 text-lg items-center">
+						<button className="font-bold hover:bg-gray-100 px-3 py-2 rounded-md flex underline text-gray-700 text-lg items-center">
 							<IconChevronLeft />
 							Back
 						</button>
