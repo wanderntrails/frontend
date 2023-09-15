@@ -1,4 +1,4 @@
-import { IconPhoto, IconPlus } from "@tabler/icons"
+import { IconPhoto, IconPlus, IconTrash } from "@tabler/icons"
 import { useState } from "react"
 import { DropEvent } from "react-aria"
 import bytes from "bytes"
@@ -22,7 +22,7 @@ const UploadFile = () => {
 
 	async function handleDrop({ items }: DropEvent) {
 		const droppedItems = items.filter(
-			item => item.kind === "file",
+			item => item.kind === "file" && VALID_FILE_TYPES.includes(item.type),
 		) as FileDropItem[]
 
 		const droppedFiles = droppedItems.map(item => item.getFile())
@@ -49,7 +49,7 @@ const UploadFile = () => {
 			<DropZone
 				className="group relative"
 				getDropOperation={(types: DragTypes) => {
-					if (VALID_FILE_TYPES.every(type => types.has(type))) {
+					if (VALID_FILE_TYPES.some(type => types.has(type))) {
 						return "copy"
 					} else {
 						console.log("INVALID FILE TYPE")
@@ -64,29 +64,28 @@ const UploadFile = () => {
 				</div>
 				{files.length > 0 ? (
 					<>
-						<div className="flex h-80 flex-col items-center justify-center rounded-md bg-gray-100 text-gray-700">
-							<img
-								alt=""
-								src={URL.createObjectURL(files[0])}
-								className="h-full w-full object-contain"
-							/>
-						</div>
-						<p className="mt-2 text-sm text-rose-700">
-							{files[0].size < MIN_FILE_SIZE &&
-								`The file is too small. Please upload a photo that exceeds ${bytes(
-									MIN_FILE_SIZE,
-								)}.`}
-							{files[0].size > MAX_FILE_SIZE &&
-								`The file is too big. Please upload a photo that is less than ${bytes(
-									MAX_FILE_SIZE,
-								)}.`}
-						</p>
 						<div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-							{files.slice(1).map((file, i) => (
-								<div>
-									<div className="flex h-60 flex-col items-center justify-center rounded-md bg-gray-100 text-gray-700">
+							{files.map((file, fileIndex) => (
+								<div
+									key={fileIndex}
+									className={`${fileIndex === 0 && "md:col-span-2"}`}
+								>
+									<div
+										className={`relative flex ${
+											fileIndex === 0 ? "h-80" : "h-60"
+										} flex-col items-center justify-center rounded-md bg-gray-100 text-gray-700`}
+									>
+										<button
+											className="absolute right-4 top-4 cursor-pointer rounded-full bg-white p-2 shadow-lg"
+											onClick={e => {
+												e.preventDefault()
+												setFiles(files => files.filter(f => f !== file))
+											}}
+										>
+											<IconTrash size={18} />
+										</button>
 										<img
-											key={i}
+											key={fileIndex}
 											alt=""
 											src={URL.createObjectURL(file)}
 											className="h-full w-full object-contain"
