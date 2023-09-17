@@ -10,6 +10,7 @@ import theme from "./design-system/theme"
 import Form from "./onboard/Form"
 import HomePrelaunch from "./prelaunch/HomePrelaunch"
 import PrivacyPrelaunch from "./prelaunch/PrivacyPrelaunch"
+import { FormProvider } from "./onboard/FormContext"
 
 const root = createRoot(document.querySelector("#root") as HTMLElement)
 root.render(
@@ -20,7 +21,14 @@ root.render(
 					<Routes>
 						<Route index element={<HomePrelaunch />} />
 						<Route path="privacy" element={<PrivacyPrelaunch />} />
-						<Route path="onboard" element={<Form />} />
+						<Route
+							path="onboard"
+							element={
+								<FormProvider>
+									<Form />
+								</FormProvider>
+							}
+						/>
 						<Route
 							path="map/*"
 							element={
@@ -34,5 +42,5 @@ root.render(
 				</BrowserRouter>
 			</ThemeProvider>
 		</HelmetProvider>
-	</StrictMode>
+	</StrictMode>,
 )

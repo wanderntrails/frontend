@@ -1,7 +1,8 @@
-import { Label, TextField, Text } from "react-aria-components"
-import { TextArea } from "../design-system/components"
+import { Label, Text, TextField } from "react-aria-components"
+import { TextArea } from "../../design-system/components"
+import { StepProps } from "../FormContext"
 
-const Description = () => {
+const Description = ({ formData, setData }: StepProps) => {
 	return (
 		<TextField className="mt-4">
 			<h1>
@@ -12,7 +13,11 @@ const Description = () => {
 			<Text className="mt-2 block text-xl text-gray-500" slot="description">
 				Share what makes your place special.
 			</Text>
-			<TextArea rows={8} />
+			<TextArea
+				rows={8}
+				value={formData.description}
+				onChange={e => setData("description", e.target.value)}
+			/>
 		</TextField>
 	)
 }

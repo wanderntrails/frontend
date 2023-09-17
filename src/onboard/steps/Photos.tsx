@@ -12,23 +12,22 @@ import {
 	Label,
 	DragTypes,
 } from "react-aria-components"
+import { StepProps } from "../FormContext"
 
 const VALID_FILE_TYPES = ["image/png", "image/jpeg"]
 const MIN_FILE_SIZE = 50 * 2 ** 10 // 50 KiB
 const MAX_FILE_SIZE = 10 * 2 ** 20 // 10 MiB
 
-const UploadFile = () => {
-	const [files, setFiles] = useState<File[]>([])
-
-	async function handleDrop({ items }: DropEvent) {
+const UploadFile = ({ formData: { photos }, setData }: StepProps) => {
+	function handleDrop({ items }: DropEvent) {
 		const droppedItems = items.filter(
 			item => item.kind === "file" && VALID_FILE_TYPES.includes(item.type),
 		) as FileDropItem[]
 
-		const droppedFiles = droppedItems.map(item => item.getFile())
+		const droppedPhotos = droppedItems.map(item => item.getFile())
 
-		Promise.all(droppedFiles).then(newFiles =>
-			setFiles(files => [...files, ...newFiles]),
+		Promise.all(droppedPhotos).then(newPhotos =>
+			setData("photos", photos => [...photos, ...newPhotos]),
 		)
 	}
 
@@ -62,10 +61,10 @@ const UploadFile = () => {
 					<IconPhoto size={48} stroke={1.5} />
 					<p className="text-2xl">Drop to upload</p>
 				</div>
-				{files.length > 0 ? (
+				{photos.length > 0 ? (
 					<>
 						<div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-							{files.map((file, fileIndex) => (
+							{photos.map((file, fileIndex) => (
 								<div
 									key={fileIndex}
 									className={`${fileIndex === 0 && "md:col-span-2"}`}
@@ -75,15 +74,16 @@ const UploadFile = () => {
 											fileIndex === 0 ? "h-80" : "h-60"
 										} flex-col items-center justify-center rounded-md bg-gray-100 text-gray-700`}
 									>
-										<button
+										<Button
 											className="absolute right-4 top-4 cursor-pointer rounded-full bg-white p-2 shadow-lg"
-											onClick={e => {
-												e.preventDefault()
-												setFiles(files => files.filter(f => f !== file))
-											}}
+											onPress={() =>
+												setData("photos", photos =>
+													photos.filter((_, i) => i !== fileIndex),
+												)
+											}
 										>
 											<IconTrash size={18} />
-										</button>
+										</Button>
 										<img
 											key={fileIndex}
 											alt=""
@@ -107,8 +107,8 @@ const UploadFile = () => {
 								acceptedFileTypes={VALID_FILE_TYPES}
 								allowsMultiple
 								onChange={uploadEvent =>
-									setFiles(files => [
-										...files,
+									setData("photos", photos => [
+										...photos,
 										...Array.from(uploadEvent ?? []),
 									])
 								}
@@ -129,7 +129,10 @@ const UploadFile = () => {
 							acceptedFileTypes={VALID_FILE_TYPES}
 							allowsMultiple
 							onChange={uploadEvent =>
-								setFiles(files => [...files, ...Array.from(uploadEvent ?? [])])
+								setData("photos", photos => [
+									...photos,
+									...Array.from(uploadEvent ?? []),
+								])
 							}
 						>
 							<Button className="mt-5 text-sm font-bold underline">

@@ -1,7 +1,8 @@
 import { Label } from "react-aria-components"
-import { TextArea } from "../design-system/components"
+import { TextArea } from "../../design-system/components"
+import { StepProps } from "../FormContext"
 
-const Availability = () => {
+const Availability = ({ formData, setData }: StepProps) => {
 	return (
 		<>
 			<h1>
@@ -9,7 +10,10 @@ const Availability = () => {
 					What dates is your rifugio open every year?
 				</Label>
 			</h1>
-			<TextArea />
+			<TextArea
+				value={formData.availability}
+				onChange={e => setData("availability", e.target.value)}
+			/>
 		</>
 	)
 }
