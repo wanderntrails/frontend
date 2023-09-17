@@ -34,8 +34,13 @@ const Layout = () => {
 				</div>
 				<div className="fixed bottom-0 w-full bg-white">
 					<div className="flex gap-2">
-						{Array.from({ length: 8 }, (_, i) => (
-							<div key={i} className="h-2 flex-1 bg-gray-300" />
+						{Array.from({ length: steps.length }, (_, i) => (
+							<div
+								key={i}
+								className={`h-2 flex-1 ${
+									i < step ? "bg-gray-700" : "bg-gray-300"
+								}`}
+							/>
 						))}
 					</div>
 					<div className="flex items-center justify-between px-6 py-5 md:px-12">
