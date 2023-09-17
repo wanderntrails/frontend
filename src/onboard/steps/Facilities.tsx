@@ -7,7 +7,7 @@ import {
 } from "@tabler/icons"
 import { CheckboxGroup, Label } from "react-aria-components"
 import { Checkbox } from "../../design-system/components"
-import { FACILITIES, Facility, StepProps } from "../FormContext"
+import { FACILITIES, Facility, StepProps } from "../formData"
 
 const IconFacilities: { name: Facility; Icon: TablerIcon }[] = [
 	{ name: "Toilets", Icon: IconToiletPaper },
@@ -29,6 +29,7 @@ const Facilities = ({ formData, setData }: StepProps) => {
 		<CheckboxGroup
 			value={formData.facilities}
 			onChange={setFacilities}
+			isInvalid={formData.facilities.length === 0}
 			isRequired
 		>
 			<h1>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import { Button } from "../design-system/components"
 import WandernBlue from "../map/icons/WandernBlue"
-import { useForm } from "./FormContext"
+import { steps, useForm } from "./formData"
 
 /*
 Cover page - Get started button + no back button
@@ -18,9 +18,8 @@ Form
 		----> DASHBOARD <-----
 */
 
-const Layout = () => {
-	const { step, steps, prevStep, nextStep, formData, setData } = useForm()
-
+const Form = () => {
+	const { step, prevStep, nextStep, formData, setData } = useForm()
 	return (
 		<>
 			<header className="bg-white px-6 py-6 text-white md:px-12">
@@ -28,7 +27,13 @@ const Layout = () => {
 					<WandernBlue />
 				</Link>
 			</header>
-			<form className="mt-12">
+			<form
+				className="mt-12"
+				onSubmit={e => {
+					e.preventDefault()
+					nextStep()
+				}}
+			>
 				<div className="mx-6 mb-32 max-w-lg md:mx-auto">
 					{steps[step]({ formData, setData })}
 				</div>
@@ -54,7 +59,7 @@ const Layout = () => {
 								Back
 							</button>
 						)}
-						<Button as="button" type="button" size="small" onClick={nextStep}>
+						<Button as="button" type="submit" size="small">
 							{step > 0 ? "Continue" : "Get started"}
 						</Button>
 					</div>
@@ -64,4 +69,4 @@ const Layout = () => {
 	)
 }
 
-export default Layout
+export default Form

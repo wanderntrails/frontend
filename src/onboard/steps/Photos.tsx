@@ -12,7 +12,7 @@ import {
 	Label,
 	DragTypes,
 } from "react-aria-components"
-import { StepProps } from "../FormContext"
+import { StepProps } from "../formData"
 
 const VALID_FILE_TYPES = ["image/png", "image/jpeg"]
 const MIN_FILE_SIZE = 50 * 2 ** 10 // 50 KiB

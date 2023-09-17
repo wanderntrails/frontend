@@ -1,6 +1,6 @@
 import { Label, Text, TextField } from "react-aria-components"
 import { TextArea } from "../../design-system/components"
-import { StepProps } from "../FormContext"
+import { StepProps } from "../formData"
 
 const Description = ({ formData, setData }: StepProps) => {
 	return (
@@ -15,6 +15,7 @@ const Description = ({ formData, setData }: StepProps) => {
 			</Text>
 			<TextArea
 				rows={8}
+				required
 				value={formData.description}
 				onChange={e => setData("description", e.target.value)}
 			/>
