@@ -1,4 +1,5 @@
-import { IconSend } from "@tabler/icons"
+/*
+import { IconSend } from "@tabler/icons-react"
 import Cookies from "js-cookie"
 import {
 	MutableRefObject,
@@ -20,7 +21,7 @@ const Form = ({
 	const [inputError, setInputError] = useState(false)
 	const csrfToken = Cookies.get("csrftoken") ?? ""
 
-	/* Set CSRF Token */
+	// Set CSRF Token 
 	useEffect(() => {
 		// check if csrf token exists first?
 		fetch(`${BASE_URL}/csrf`, { credentials: "include" })
@@ -28,7 +29,7 @@ const Form = ({
 			.then(data => Cookies.set("csrftoken", data.csrfToken))
 	}, [])
 
-	/* Submit email for access to Wandern MVP */
+	// Submit email for access to Wandern MVP
 	const onSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
 		event.preventDefault()
 		fetch(`${BASE_URL}/request-access`, {
@@ -37,7 +38,7 @@ const Form = ({
 			headers: { "X-CSRFToken": csrfToken },
 			credentials: "include",
 		}).then(({ ok }: Response) =>
-			ok ? window.location.assign("/map") : setInputError(true)
+			ok ? window.location.assign("/map") : setInputError(true),
 		)
 	}
 
@@ -71,3 +72,4 @@ const Form = ({
 }
 
 export default Form
+*/

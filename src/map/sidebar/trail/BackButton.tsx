@@ -1,4 +1,4 @@
-import { IconArrowLeft } from "@tabler/icons"
+import { IconArrowLeft } from "@tabler/icons-react"
 import { useNavigate } from "react-router-dom"
 
 import { Box } from "../../../design-system/components"

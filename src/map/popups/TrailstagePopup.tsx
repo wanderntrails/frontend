@@ -1,4 +1,8 @@
-import { IconArrowDownRight, IconArrowUpRight, IconWalk } from "@tabler/icons"
+import {
+	IconArrowDownRight,
+	IconArrowUpRight,
+	IconWalk,
+} from "@tabler/icons-react"
 import { ThemeProvider } from "styled-components"
 
 import { Box } from "../../design-system/components"

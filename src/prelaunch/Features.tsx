@@ -1,4 +1,4 @@
-import { IconEdit, IconFileExport, IconMessages } from "@tabler/icons"
+import { IconEdit, IconFileExport, IconMessages } from "@tabler/icons-react"
 
 import { Box, Heading } from "../design-system/components"
 

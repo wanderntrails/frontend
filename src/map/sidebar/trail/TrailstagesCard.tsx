@@ -3,7 +3,7 @@ import {
 	IconArrowUpRight,
 	IconDirections,
 	IconWalk,
-} from "@tabler/icons"
+} from "@tabler/icons-react"
 
 import { Box, Heading, Text } from "../../../design-system/components"
 import theme from "../../../design-system/theme"

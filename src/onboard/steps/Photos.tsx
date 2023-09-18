@@ -1,16 +1,15 @@
-import { IconPhoto, IconPlus, IconTrash } from "@tabler/icons"
-import { useState } from "react"
-import { DropEvent } from "react-aria"
+import { IconPhoto, IconPlus, IconTrash } from "@tabler/icons-react"
 import bytes from "bytes"
+import { DropEvent } from "react-aria"
 
 import {
-	DropZone,
-	FileTrigger,
 	Button,
-	FileDropItem,
-	Text,
-	Label,
 	DragTypes,
+	DropZone,
+	FileDropItem,
+	FileTrigger,
+	Label,
+	Text,
 } from "react-aria-components"
 import { StepProps } from "../formData"
 

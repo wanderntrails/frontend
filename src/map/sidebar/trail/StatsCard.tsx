@@ -1,4 +1,4 @@
-import { IconClock, IconMountain, IconRuler } from "@tabler/icons"
+import { IconClock, IconMountain, IconRuler } from "@tabler/icons-react"
 
 import { Box } from "../../../design-system/components"
 import { Trail } from "../../../interfaces"

@@ -1,4 +1,4 @@
-import { IconBus } from "@tabler/icons"
+import { IconBus } from "@tabler/icons-react"
 import { Fragment } from "react"
 import ReactMarkdown from "react-markdown"
 

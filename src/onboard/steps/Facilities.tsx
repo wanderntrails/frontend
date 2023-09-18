@@ -3,13 +3,14 @@ import {
 	IconToiletPaper,
 	IconToolsKitchen2,
 	IconWifi,
-	TablerIcon,
-} from "@tabler/icons"
+	TablerIconsProps,
+} from "@tabler/icons-react"
+
 import { CheckboxGroup, Label } from "react-aria-components"
 import { Checkbox } from "../../design-system/components"
 import { FACILITIES, Facility, StepProps } from "../formData"
 
-const IconFacilities: { name: Facility; Icon: TablerIcon }[] = [
+const IconFacilities: { name: Facility; Icon: React.FC<TablerIconsProps> }[] = [
 	{ name: "Toilets", Icon: IconToiletPaper },
 	{ name: "WiFi", Icon: IconWifi },
 	{ name: "Restaurant", Icon: IconToolsKitchen2 },

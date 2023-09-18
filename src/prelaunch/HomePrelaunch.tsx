@@ -1,4 +1,4 @@
-import { IconArrowNarrowDown } from "@tabler/icons"
+import { IconArrowNarrowDown } from "@tabler/icons-react"
 import { useRef } from "react"
 import { Helmet } from "react-helmet-async"
 

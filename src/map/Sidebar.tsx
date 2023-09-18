@@ -1,4 +1,4 @@
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons"
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react"
 import { Route, Routes } from "react-router-dom"
 
 import { Box } from "../design-system/components"

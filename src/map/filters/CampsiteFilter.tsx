@@ -1,4 +1,4 @@
-import { IconTent } from "@tabler/icons"
+import { IconTent } from "@tabler/icons-react"
 import { useState } from "react"
 
 import { Box, Text } from "../../design-system/components"

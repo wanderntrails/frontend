@@ -1,4 +1,4 @@
-import { IconChevronRight } from "@tabler/icons"
+import { IconChevronRight } from "@tabler/icons-react"
 import { Map } from "mapbox-gl"
 import { MutableRefObject, useState } from "react"
 import { useNavigate } from "react-router-dom"
